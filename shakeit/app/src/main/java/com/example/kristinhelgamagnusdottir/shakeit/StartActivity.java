@@ -1,5 +1,11 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
+/**
+ * Höfundur: Emil Ragnarsson
+ * Útgáfa: 1.0
+ * Dagsetning: 16. október 2014
+ */
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;

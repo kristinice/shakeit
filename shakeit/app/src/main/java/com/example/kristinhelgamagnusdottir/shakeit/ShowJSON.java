@@ -1,5 +1,10 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
+/**
+ * Höfundur: Kristín Helga Magnúsdóttir
+ * Útgáfa: 1.0
+ * Dagsetning: 16. október 2014
+ */
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,9 +18,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.Random;
-/**
- * Created by kristinhelgamagnusdottir on 14/10/14.
- */
+
 public class ShowJSON extends Activity implements View.OnClickListener{
     Movies movies = new Movies();
     Cocktails cocktails = new Cocktails();

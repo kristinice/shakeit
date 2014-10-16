@@ -1,5 +1,11 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
+/**
+ * Höfundur: Sigurbjörn Jónsson
+ * Útgáfa: 1.0
+ * Dagsetning: 16. október 2014
+ */
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;

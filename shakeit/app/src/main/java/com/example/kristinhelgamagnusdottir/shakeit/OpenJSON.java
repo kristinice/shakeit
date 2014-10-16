@@ -1,5 +1,11 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
+/**
+ * Höfundur: Sindri Snær Rúnarsson
+ * Útgáfa: 1.0
+ * Dagsetning: 16. október 2014
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
