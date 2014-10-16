@@ -8,21 +8,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Ýttu á takkan til að fá random mynd"
+        android:text="@string/want_random"
         android:id="@+id/tvViltuRandom"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gefðu mér Random"
+        android:text="@string/get_random"
         android:id="@+id/bVilRandom"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ég vil fara til baka"
+        android:text="@string/tilbaka"
         android:id="@+id/bTilBaka"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
