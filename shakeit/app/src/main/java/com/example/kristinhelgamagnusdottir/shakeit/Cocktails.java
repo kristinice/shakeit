@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public class Cocktails {
     HttpClient client = new DefaultHttpClient();;
-    final static String URL = "https://raw.githubusercontent.com/teijo/iba-cocktails/master/recipes.json";
+    final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/cocktails.json";
 
     public String cocktailList(int numb) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
