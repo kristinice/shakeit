@@ -4,6 +4,10 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Höfundur: Sigurbjörn Jónsson
  * Útgáfa: 1.0
  * Dagsetning: 16. október 2014
+ *
+ * Þessir klasar eru hönnuðir fyrir því hvað skal gera við hverja JSON skrá sem fæst af netinu.
+ * ShowJSON notar klasana eftir að GlobalVariable hefur sagt hvaða klasi eigi að keyrast ef að
+ * notandi hefur valið flokk. Cocktails nær í JSON af heimasvæði HÍ.
  */
 
 import org.apache.http.HttpEntity;

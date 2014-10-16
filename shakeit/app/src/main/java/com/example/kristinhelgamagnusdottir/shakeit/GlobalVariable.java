@@ -4,6 +4,9 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Höfundur: Sigurbjörn Jónsson
  * Útgáfa: 1.0
  * Dagsetning: 16. október 2014
+ *
+ * Klasinn GlobalVariable gefur til kynna hvaða flokkur (kvikmyndir, hanastél eða brandarar)
+ * hefur verið valinn.
  */
 
 import android.app.Application;

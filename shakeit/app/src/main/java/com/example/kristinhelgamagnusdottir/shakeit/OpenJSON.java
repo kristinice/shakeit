@@ -4,6 +4,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Höfundur: Sindri Snær Rúnarsson
  * Útgáfa: 1.0
  * Dagsetning: 16. október 2014
+ *
+ * OpenJSON klasinn er milliliður StartActivity og ShowJSON. Hann tekur ekki við neinum upplýsingum
+ * og skilar ekki neinum. Hann eingögnu opnast eftir að flokkur hefur verið valinn og opnar síðan
+ * ShowJSON ef ýtt er á takkan “Give me a suggestion”. Hann er tengdur við give_me_text.xml skránna
+ * til útlits.
  */
 
 import android.app.Activity;

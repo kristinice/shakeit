@@ -4,6 +4,10 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Höfundur: Emil Ragnarsson
  * Útgáfa: 1.0
  * Dagsetning: 16. október 2014
+ *
+ * Klasinn StartActivity er upphafsklasi forritsins. Hann útbýr lista þar sem hægt er að velja flokk
+ * sem notandinn vill fá tilviljanakennda uppástungu um. Hann vísar síðan í klasann OpenJSON eftir
+ * að notandi hefur valið sér flokk.
  */
 
 import android.app.ListActivity;

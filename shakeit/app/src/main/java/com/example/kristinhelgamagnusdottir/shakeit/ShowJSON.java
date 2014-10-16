@@ -4,6 +4,12 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Höfundur: Kristín Helga Magnúsdóttir
  * Útgáfa: 1.0
  * Dagsetning: 16. október 2014
+ *
+ * Show JSON inniheldur annan klasa inn í sér sem heitir Read. Read er AsyncTask klasi til þess að
+ * geta náð í JSON file-a á öðrum Thread meðan forritið er í gangi á aðal keyrslu Thread.
+ * GlobalVariable  segir Read hvaða JSON eigi að keyrast hverju sinni. ShowJSON prentar síðan
+ * upplýsingarnar sem Movies,Cocktails eða ChuckNorrisJokes hafa gefið. Klasinn getur síðan keyrt
+ * sig aftur ef ýtt er á “Give me another suggestion”.
  */
 
 import android.app.Activity;
