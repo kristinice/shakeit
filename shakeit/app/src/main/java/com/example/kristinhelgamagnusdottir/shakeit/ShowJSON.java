@@ -13,9 +13,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,6 +37,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Random randGen = new Random();
     int rando = randGen.nextInt(100);
     Button aftur,tilbaka;
+    private ShakeListener mShaker;
 
 
 
@@ -53,6 +56,24 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
 
+        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+
+        mShaker = new ShakeListener(this);
+        mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
+            public void onShake()
+            {
+
+                //vibe.vibrate(100);
+
+                Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                startActivity(bVR);
+                finish();
+                finish();
+
+
+
+            }
+        });
     }
 
 

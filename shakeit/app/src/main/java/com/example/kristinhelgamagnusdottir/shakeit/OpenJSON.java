@@ -12,8 +12,10 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,6 +26,7 @@ import android.widget.Button;
 public class OpenJSON extends Activity implements View.OnClickListener {
 
     Button GiveRandom, FaraTilBaka;
+    private ShakeListener mShaker;
 
 
     @Override
@@ -37,6 +40,20 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
+        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+
+        mShaker = new ShakeListener(this);
+        mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
+            public void onShake()
+            {
+
+                Intent bVR = new Intent(OpenJSON.this, ShowJSON.class);
+                startActivity(bVR);
+                finish();
+
+
+            }
+        });
     }
 
     public void onClick(View view) {
@@ -54,7 +71,16 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
     @Override
     protected void onPause() {
+        mShaker.pause();
         super.onPause();
-        finish();
+
     }
+
+    @Override
+    public void onResume()
+    {
+        mShaker.resume();
+        super.onResume();
+    }
+
 }
