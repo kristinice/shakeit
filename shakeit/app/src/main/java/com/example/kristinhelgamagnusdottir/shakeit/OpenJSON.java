@@ -48,8 +48,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
             {
 
                 Intent bVR = new Intent(OpenJSON.this, ShowJSON.class);
-                startActivity(bVR);
                 finish();
+                startActivity(bVR);
+
 
 
             }
