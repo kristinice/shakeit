@@ -25,6 +25,8 @@ import android.widget.TextView;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class ShowJSON extends Activity implements View.OnClickListener{
@@ -32,8 +34,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Cocktails cocktails = new Cocktails();
     ChuckNorrisJokes chuckNorrisJokes = new ChuckNorrisJokes();
     TextView httpStuff;
+    TextView httpStuff2;
     int activityNumb;
     String json;
+    String json2;
     Random randGen = new Random();
     int rando = randGen.nextInt(100);
     Button aftur,tilbaka;
@@ -46,6 +50,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_movie);
         httpStuff = (TextView) findViewById(R.id.tvMovie);
+        httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
 
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         new Read().execute("text");
@@ -85,18 +90,21 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             try {
                 if(activityNumb == 1) {
                     json = movies.movieList(rando);
+                    json2 = movies.movieList2(rando);
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(rando);
+                    json2 = cocktails.cocktailList2(rando);
                 }
                 if(activityNumb == 3) {
                     json = chuckNorrisJokes.chuckNorris();
+                    json2 = "";
                 }
                 if(json == null) {
                     httpStuff.setText("Database not connected");
                 }
                 else {
-                    return json;
+                     return json;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -109,6 +117,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         @Override
         protected void onPostExecute(String results) {
             httpStuff.setText(results);
+            httpStuff2.setText(json2);
         }
     }
 

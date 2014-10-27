@@ -46,6 +46,23 @@ public class Cocktails {
         else {
             return null;
         }
+    }
 
+    public String cocktailList2(int numb) throws ClientProtocolException, IOException, JSONException {
+        StringBuilder url = new StringBuilder(URL);
+        HttpGet get = new HttpGet(url.toString());
+        HttpResponse r = client.execute(get);
+        int status = r.getStatusLine().getStatusCode();
+        if(status == 200) {
+            HttpEntity e = r.getEntity();
+            String data = EntityUtils.toString(e);
+            JSONArray timeline = new JSONArray(data);
+            JSONObject last = timeline.getJSONObject(numb);
+            String lasts = last.getString("glass");
+            return lasts;
+        }
+        else {
+            return null;
+        }
     }
 }
