@@ -71,9 +71,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 //vibe.vibrate(100);
 
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                finish();
                 startActivity(bVR);
-                finish();
-                finish();
+
 
 
 
@@ -135,6 +135,6 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+        mShaker.pause();
     }
 }
