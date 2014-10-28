@@ -1,0 +1,1078 @@
+[
+	{
+	"name": "Argentína", 
+	"branch":	
+				[
+				{"address": "Barónstíg 11a", "postcode": "101"}
+				]
+	"number": "5519555",
+	"price": "4"
+	},
+	{
+	"name": "Austur Indíafjelagið",
+	"branch":	
+				[
+				{"address": "Hverfisgötu 56", "postcode": "101"}
+				]
+	"number": "5521630",
+	"price": [ "3", "4" ]
+	},
+	{
+	"name": "Fiskmarkaðurinn",
+	"branch":	
+				[
+				{"address": "Aðalstræti 12", "postcode": "101"}
+				]
+	"number": "5788877",
+	"price": "3"
+	},
+	{
+	"name": "Lækjarbrekka",
+	"branch":	
+				[
+				{"address": "Bankastræti 2", "postcode": "101"}
+				]
+	"number": "5514430",
+	"price": [ "3", "4" ]
+	},
+	{
+	"name": "Sjávargrillið",
+	"branch":	
+				[
+				{"address": "Skólavörðustíg", "postcode": "101"}
+				]
+	"number": "5711100",
+	"price": "3"
+	},
+	{
+	"name": "Steikhúsið",
+	"branch":	
+				[
+				{"address": "Hamarhúsinu", "postcode": "101"}
+				]
+	"number": "5611111",
+	"price": "3"
+	},
+	{
+	"name": "Tapas Bar",
+	"branch":	
+				[
+				{"address": "Vesturgötu 3b", "postcode": "101"}
+				]
+	"number": "5512344",
+	"price": "3"
+	},
+	{
+	"name": "Tapashúsið",
+	"branch":	
+				[
+				{"address": "Ægisgarður 2", "postcode": "101"}
+				]
+	"number": "5512344",
+	"price": "3"
+	},
+	{
+	"name": "Vegamót",
+	"branch":	
+				[
+				{"address": "Vegamótstíg 4", "postcode": "101"}
+				]
+	"number":"5113040",
+	"price": "2"
+	},
+	{
+	"name": "Kaffitár",
+	"branch":	
+				[
+				{"address": "Bankastræti 8", "postcode": "101"}
+				{"address": "Borgartúni 10", "postcode": "105"}
+				{"address": "Smáralind", "postcode": "201"}
+				{"address": "Þjóðminjasafn", "postcode": "101"}
+				{"address": "Kringlunni", "postcode": "103"}
+				]
+	"number": "5114540",
+	"price": "2"
+	},
+	{
+	"name": "Shalimar",
+	"branch":	
+				[
+				{"address": "Austurstræti 4", "postcode": "101"}
+				]
+	"number": "5510292",
+	"price": [ "2", "3" ]
+	},
+	{
+	"name": "American Style",
+	"branch":	
+				[
+				{"address": "Tryggvagötu 26", "postcode": "101"}
+				{"address": "Bíldshöfða 14", "postcode": "110"}
+				{"address": "Dalshrauni 13", "postcode": "220"}
+				{"address": "Nýbýlavegi 22", "postcode": "200"}
+				{"address": "Skipholti 70", "postcode": "105"}
+				]
+	"number": "5112700",
+	"price": "1"
+	},
+	{
+	"name": "Austurlanda Hraðlestin",
+	"branch":	
+				[
+				{"address": "Hverfisgötu 64a", "postcode": "101"}
+				]
+	"number": "5783838",
+	"price": "2"
+	},
+	{
+	"name": "Bæjarins Bestu",
+	"branch":	
+				[
+				{"address": "Laugavegur 3", "postcode": "101"}
+				]
+	"price": "1"
+	},
+	{
+	"name": "Chuck Norris Grill",
+	"branch":	
+				[
+				{"address": "Laugavegur 30", "postcode": "101"}
+				]
+	"number": "5613333",
+	"price": "2"
+	},
+	{
+	"name": "Deli",
+	"branch":	
+				[
+				{"address": "Bankastræti 14", "postcode": "101"}
+				]
+	"number": "5516000",
+	"price": "1"
+	},
+	{
+	"name": "Dominos",
+	"branch": 	
+				[ 	
+					{"address": "Grensásvegi 11", "postcode" "108" }
+					{"address": "Spönginni 17", "postcode" "112" }
+					{"address": "Höfðabakka 1", "postcode" "110" }
+					{"address": "Lóuhólum 6", "postcode" "111" }
+					{"address": "Fjarðargötu 11", "postcode" "220" }
+					{"address": "Garðatorgi 7", "postcode" "210" }
+					{"address": "Nýbílavegi 14", "postcode" "200" }
+					{"address": "Kringlunni", "postcode" "103" }
+					{"address": "Skúlagötu 26", "postcode" "101" }
+					{"address": "Ánanaustum 15", "postcode" "101" }
+				]
+	"number": "5812345",
+	"price": "1"
+	},
+	{
+	"name": "Eldsmiðjan",
+	"branch":	
+				[
+				{"address": "Bragagata 38a", "postcode": "101"}
+				{"address": "Laugavegur 81", "postcode": "101"}
+				{"address": "Suðurlandsbraut 12", "postcode": "108"}
+				]
+	"number": "5623838",
+	"price": [ "2", "3" ]
+	},
+	{
+	"name": "Gamla vínhúsið",
+	"branch":	
+				[
+				{"address": "Vesturgötu 4", "postcode": "220"}
+				{"address": "Klapparstíg 38", "postcode": "101"}
+				]
+	"number": "5651130",
+	"price": [ "2", "3" ]
+	},
+	{
+	"name": "Gandhi",
+	"branch":	
+				[
+				{"address": "Pósthússtræti 17", "postcode": "101"}
+				]
+	"number": "5111691",
+	"price": "3"
+	},
+	{
+	"name": "Garðurinn","branch":	
+				[
+				{"address": "Klapparstíg 37", "postcode": "101"}
+				]
+	"number": "5612345",
+	"price": "1"
+	},
+	{
+	"name": "Grillhúsið",
+	"branch":	
+				[
+				{"address": "Tryggvagötu 20", "postcode": "101"}
+				{"address": "Sprengisandi", "postcode": "108"}
+				{"address": "Kringlunni", "postcode": "103"}
+				]
+	"number": "5275000",
+	"price": [ "2", "3" ]
+	},
+	{
+	"name": "Hamborgarabúlla Tómasar",
+	"branch":	
+				[
+				{"address": "Geirsgötu 1", "postcode": "101"}
+				{"address": "Reykjavíkurvegi 62", "postcode": "220"}
+				{"address": "Bíldshöfða 18", "postcode": "110"}
+				{"address": "Ofanleit 14", "postcode": "103"}
+				{"address": "Bankastræti 5", "postcode": "101"}
+				
+				]
+	"number": "5111888",
+	"price": "1"
+	},
+	{
+	"name": "Hereford steikhús",
+	"branch":	
+				[
+				{"address": "Laugavegi 53B", "postcode": "101"}
+				]
+	"number": "5113350",
+	"price": [ "3", "4" ]
+	},
+	{
+	"name": "Hlölla bátar",
+	"branch":	
+				[
+				{"address": "Ingólfstorgi", "postcode": "101"}
+				]
+	"number": "5113500",
+	"price": "1"
+	},
+	{
+	"name": "Hrói Höttur",
+	"branch":	
+				[
+				{"address": "Fákafeni 11", "postcode": "108"}
+				]
+	"number": "5544444",
+	"price": [ "1", "2" ]
+	},
+	{
+	"name": "Humarhúsið",
+	"branch":	
+				[
+				{"address": "Amtmannsstíg 1", "postcode": "101"}
+				]
+	"number": "5613303",
+	"price": "4"
+	},
+	{
+	"name": "Kebab húsið",
+	"branch":	
+				[
+				{"address": "Grensásvegi 3", "postcode": "108"}
+				{"address": "Austurstræti 3", "postcode": "101"}
+				]
+	"number": "5882020",
+	"price": "1"
+	},
+	{
+	"name": "Krua Thai",
+	"branch":	
+				[
+				{"address": "Tryggvagötu 14", "postcode": "101"}
+				{"address": "Bæjarlind 14", "postcode": "201"}
+				]
+	"number": "5610039
+	"price": [ "1", "2" ]
+	},
+	{
+	"name": "Kryddlegin Hjörtu",
+	"branch":	
+				[
+				{"address": "Skúlagata 1", "postcode": "101"}
+				]
+	"number": "5888818",
+	"price": [ "1", "2" ]
+	},
+	{
+	"name": "Lebowski bar",
+	"branch":	
+				[
+				{"address": "Laugavegi 20a", "postcode": "101"}
+				]
+	"number": "5522300",
+	"price": "1"
+	},
+	{
+	"name": "Nonnabiti",
+	"branch":	
+				[
+				{"address": "Hafnarstræti 9", "postcode": "101"}
+				]
+	"number": "5512312",
+	"price": [ "1", "2" ]
+	},
+	{
+	"name": "Núðluhúsið",
+	"branch":	
+				[
+				{"address": "Laugavegi 59", "postcode": "101"}
+				]
+	"number": "5522400",
+	"price": "1"
+	},
+	{
+	"name": "Osushi - the Train",
+	"branch":	
+				[
+				{"address": "Pósthússtræti 13", "postcode": "101"}
+				{"address": "Borgartúni 29", "postcode": "105"}
+				{"address": "Reykjavíkurvegur 60", "postcode": "220"}
+				]
+	"number": "5610562",
+	"price": [ "2", "3" ]
+	},
+	{
+	"name": "Pizza King",
+	"branch":	
+				[
+				{"address": "Hafnarstræti 18", "postcode": "101"}
+				]
+	"number": "5517474",
+	"price": "1"
+	},
+	{
+	"name": "Potturinn og Pannan",
+	"branch":	
+				[
+				{"address": "Brautarholti 22", "postcode": "105"}
+				{"address": "Skólabrú 1", "postcode": "101"}
+				]
+	"number": "5511690"
+	"price": "3"
+	},{
+	"name": "Prikið",
+	"branch":	
+				[
+				{"address": "Bankastræti", "postcode": "101"}
+				]
+	"number": "5512866",
+	"price": [ "1", "2" ]
+	},
+	{
+	"name": "Rub23",
+	"branch":	
+				[
+				{"address": "Aðalstræti 2", "postcode": "101"}
+				]
+	"number": "5535323",
+	"price": "3"
+	},
+	{
+	"name": "Serrano",
+	"branch":	
+				[
+				{"address": "Kringlunni", "postcode": "103"}
+				{"address": "Dalshrauni 11", "postcode": "220"}
+				{"address": "Hringbraut 12", "postcode": "101"}
+				{"address": "Borgartúni 8-16", "postcode": "105"}
+				{"address": "Bíldshöfða 2", "postcode": "110"}
+				{"address": "Smáralind", "postcode": "201"}
+				{"address": "Spönginni", "postcode": "112"}
+				]
+	"number": "5511754",
+	"price": "1"
+	},
+	{
+	"name": "Subway",
+	"branch":	
+				[
+				{"address": "Austurstræti 3", "postcode": "101"}
+				{"address": "Ártúnshöfða", "postcode": "110"}
+				{"address": "Borgartúni 39", "postcode": "105"}
+				{"address": "Suðurlandsbraut 46", "postcode": "108"}
+				{"address": "Reykjavíkurvegi 54", "postcode": "220"}
+				{"address": "Hringbraut 121", "postcode": "107"}
+				{"address": "Kringlunni", "postcode": "103"}
+				{"address": "Hagasmára 1", "postcode": "201"}
+				{"address": "Spönginni", "postcode": "112"}
+				{"address": "Háholti 11", "postcode": "270"}
+				]
+	"number": "5111700",
+	"price": "1"
+	},
+	{
+	"name": "Sushi samba",
+	"branch":	
+				[
+				{"address": "Þingholtsstræti", "postcode": "101"}
+				]
+	"number": "5686600",
+	"price": ["3", "4" ]
+	},
+	{
+	"name": "Kringlukráin",
+	"branch":	
+				[
+				{"address": "Kringlunni", "postcode": "103"}
+				]
+	"number": "5680878"
+	"price": [ "2", "3" ]
+	},
+	"name": "Hamborgarafabrikkan",
+	"branch":	
+				[
+				{"address": "Höfðatorgi", "postcode": "105"}
+				{"address": "Kringlunni", "postcode": "103"}
+				]
+	"number": "5757575"
+	"price": "1"
+	},
+	"name": "Hjá Jóa Fel",
+	"branch":	
+				[
+				{"address": "Holtavegi", "postcode": "104"}
+				{"address": "Smáralind", "postcode": "201"}
+				{"address": "Kringlan", "postcode": "103"}
+				]
+	"number": "5888998"
+	"price": "1"
+	},
+	"name": "Rikki Chan",
+	"branch":	
+				[
+				{"address": "Kringlunni", "postcode": "103"}
+				{"address": "Smáratorgi 1", "postcode": "201"}
+				]
+	"number": "5684170"
+	"price": "2"
+	},
+	"name": "Saffran",
+	"branch":	
+				[
+				{"address": "Álfheimar 74", "postcode": "104"}
+				{"address": "Dalvegur 4", "postcode": "200"}
+				]
+	"number": "5787874"
+	"price": [ "1", "2" ]
+	},
+	"name": "Lauga-ás",
+	"branch":	
+				[
+				{"address": "Laugarásvegi 1", "postcode": "104"}
+				]
+	"number": "5531620"
+	"price": "2"
+	},
+	"name": "Quiznos",
+	"branch":	
+				[
+				{"address": "Álfheimar 49", "postcode": "104"}
+				{"address": "Álfabakki 7", "postcode": "109"}
+				{"address": "Norðlingabraut 7", "postcode": "110"}
+				{"address": "Fjallkonuvegur 1", "postcode": "112"}
+				]
+	"number": "5535445"
+	"price": "1"
+	},
+	"name": "Sportbarinn",
+	"branch":	
+				[
+				{"address": "Álfheimum 74", "postcode": "104"}
+				]
+	"number": "5336220"
+	"price": "1"
+	},
+	"name": "Tokyo Sushi",
+	"branch":	
+				[
+				{"address": "Glæsibær", "postcode": "104"}
+				]
+	"number": "5190770"
+	"price": "2"
+	},
+	"name": "Bambus",
+	"branch":	
+				[
+				{"address": "Borgartúni 16", "postcode": "105"}
+				]
+	"number": "5170123"
+	"price": "3"
+	},
+	"name": "Ban-Thai",
+	"branch":	
+				[
+				{"address": "Laugavegi 130", "postcode": "105"}
+				]
+	"number": "5522444"
+	"price": [ "2", "3" ]
+	},
+	"name": "Devitos",
+	"branch":	
+				[
+				{"address": "Laugavegi 126", "postcode": "105"}
+				]
+	"number": "5112244"
+	"price": "1"
+	},
+	"name": "Grand Resturant",
+	"branch":	
+				[
+				{"address": "Sigtúni 38", "postcode": "105"}
+				]
+	"number": "5148080"
+	"price": "3"
+	},
+	"name": "Kaffi Roma",
+	"branch":	
+				[
+				{"address": "Laugavegi 118", "postcode": "105"}
+				{"address": "Kringlunni", "postcode": "103"}
+				]
+	"number": "5620020"
+	"price": "1"
+	},
+	"name": "Kjarvalsstaðir",
+	"branch":	
+				[
+				{"address": "Flókagötu", "postcode": "105"}
+				]
+	"number": "5171290"
+	"price": "1"
+	},
+	"name": "Kjúklingastaðurinn Suðurveri",
+	"branch":	
+				[
+				{"address": "Stigahlíð 45-47", "postcode": "105"}
+				]
+	"number": "5538890"
+	"price": "1"
+	},
+	"name": "Lifandi Markaður",
+	"branch":	
+				[
+				{"address": "Borgartúni 23", "postcode": "105"}
+				{"address": "Hæðasmára 6", "postcode": "201"}
+				{"address": "Fákafeni 11", "postcode": "108"}
+				]
+	"number": "5858700"
+	"price": [ "1", "2" ]
+	},
+	"name": "Madonna",
+	"branch":	
+				[
+				{"address": "Rauðarárstíg 27", "postcode": "105"}
+				]
+	"number": "4459500"
+	"price": "3"
+	},
+	"name": "Perlan",
+	"branch":	
+				[
+				{"address": "Perlan", "postcode": "105"}
+				]
+	"number": "5620200"
+	"price": "4"
+	},
+	"name": "Pizzahöllin",
+	"branch":	
+				[
+				{"address": "Dalbraut", "postcode": "105"}
+				]
+	"number": "5461515"
+	"price": "1"
+	},
+	"name": "Pítan",
+	"branch":	
+				[
+				{"address": "Skipholt 50c", "postcode": "105"}
+				]
+	"number": "5629090"
+	"price": [ "1", "2" ]
+	},
+	"name": "Red Chili",
+	"branch":	
+				[
+				{"address": "Laugavegi 176", "postcode": "105"}
+				]
+	"number": "5626000"
+	"price": "2"
+	},
+	"name": "Ruby Tuesday",
+	"branch":	
+				[
+				{"address": "Höfðabakka 9", "postcode": "110"}
+				{"address": "Skipholti 19", "postcode": "105"}
+				]
+	"number": "5771300"
+	"price": [ "2", "3" ]
+	},
+	"name": "Svarti Svanurinn",
+	"branch":	
+				[
+				{"address": "Laugavegi 118", "postcode": "105"}
+				]
+	"number": "5516040"
+	"price": "1"
+	},
+	"name": "Yummi Yummi",
+	"branch":	
+				[
+				{"address": "Hverfisgata 123", "postcode": "105"}
+				]
+	"number": "5882121"
+	"price": [ "1", "2" ]
+	},
+	"name": "Grillið",
+	"branch":	
+				[
+				{"address": "Hagatorg", "postcode": "107"}
+				]
+	"number": "5259960"
+	"price": "4"
+	},
+	"name": "Grænt & Gómsætt",
+	"branch":	
+				[
+				{"address": "Dunhaga 5", "postcode": "107"}
+				]
+	"number": "5254920"
+	"price": [ "1", "2" ]
+	},
+	"name": "Kaffivagninn",
+	"branch":	
+				[
+				{"address": "Grandagarður 10", "postcode": "107"}
+				]
+	"number": "5515932"
+	"price": [ "1", "2" ]
+	},
+	"name": "Skrúður",
+	"branch":	
+				[
+				{"address": "Hagatorg", "postcode": "107"}
+				]
+	"number": "5259970"
+	"price": [ "2", "3" ]
+	},
+	"name": "Tian",
+	"branch":	
+				[
+				{"address": "Grensásvegur 12", "postcode": "108"}
+				]
+	"number": "5681919"
+	"price": [ "1", "2", "3" ]
+	},
+	"name": "PHO Vietnamese resturant",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 8", "postcode": "108"}
+				]
+	"number": "5886868"
+	"price": "2"
+	},
+	"name": "Aktu-taktu",
+	"branch":	
+				[
+				{"address": "Skúlagötu 15", "postcode": "101"}
+				{"address": "Fellsmúla 22", "postcode": "108"}
+				{"address": "Stekkjarbakka 2", "postcode": "109"}
+				{"address": "Ásgarði", "postcode": "210"}
+				]
+	"number": "5610400"
+	"price": "1"
+	},
+	"name": "BK Kjúklingur",
+	"branch":	
+				[
+				{"address": "Grensásvegi 5", "postcode": "108"}
+				]
+	"number": "5888585"
+	"price": "1"
+	},
+	"name": "Brasserie Askur",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 2", "postcode": "108"}
+				]
+	"number": "5539700"
+	"price": [ "2", "3" ]
+	},
+	"name": "Brautarstöðin Grill",
+	"branch":	
+				[
+				{"address": "Ármúla 42", "postcode": "108"}
+				]
+	"number": "5883090"
+	"price": "1"
+	},
+	"name": "Broadway",
+	"branch":	
+				[
+				{"address": "Ármúla 9", "postcode": "108"}
+				]
+	"number": "5331100"
+	"price": "3"
+	},
+	"name": "Culiacan",
+	"branch":	
+				[
+				{"address": "Faxafeni 9", "postcode": "108"}
+				]
+	"number": "5331033"
+	"price": "1"
+	},
+	"name": "Fylgifiskar",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 10", "postcode": "108"}
+				]
+	"number": "5331300"
+	"price": [ "1", "2"]
+	},
+	"name": "Kaffi Mílanó",
+	"branch":	
+				[
+				{"address": "Grensásvegi 3", "postcode": "108"}
+				]
+	"number": "5888860"
+	"price": "1"
+	},
+	"name": "Kentucky Fried Chicken",
+	"branch":	
+				[
+				{"address": "Faxafeni 2", "postcode": "108"}
+				{"address": "Hjallahrauni 15", "postcode": "220"}
+				{"address": "Bæjarlind 18", "postcode": "201"}
+				{"address": "Háholti 9", "postcode": "270"}
+				{"address": "Kringlumýrarbraut", "postcode": "200"}
+				]
+	"number": "5680636"
+	"price": "1"
+	},
+	"name": "Metro",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 156", "postcode": "108"}
+				{"address": "Smáratorgi 5", "postcode": "201"}
+				]
+	"number": "5811414"
+	"price": "1"
+	},
+	"name": "Múlakaffi",
+	"branch":	
+				[
+				{"address": "Hallarmúla", "postcode": "108"}
+				]
+	"number": "5537737"
+	"price": "2"
+	},
+	"name": "Nings",
+	"branch":	
+				[
+				{"address": "Hlíðarsmára 12", "postcode": "200"}
+				{"address": "Suðurlandsbraut 6", "postcode": "108"}
+				{"address": "Stórhöfði við Gullinbrú", "postcode": "110"}
+				]
+	"number": "5889899"
+	"price": [ "1", "2" ]
+	},
+	"name": "Pizza Rizzo",
+	"branch":	
+				[
+				{"address": "Hraunbæ 121", "postcode": "121"}
+				{"address": "Grensásvegi 10", "postcode": "110"}
+				]
+	"number": "5777000"
+	"price": "1"
+	},
+	"name": "Pizza-Napoli",
+	"branch":	
+				[
+				{"address": "Háaleitisbraut 12", "postcode": "108"}
+				]
+	"number": "581444"
+	"price": "1"
+	},
+	"name": "Salatbarinn",
+	"branch":	
+				[
+				{"address": "Faxafeni 9", "postcode": "108"}
+				]
+	"number": "5880222"
+	"price": [ "1", "2" ]
+	},
+	"name": "Thai matstofan",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 52", "postcode": "108"}
+				]
+	"number": "5533080"
+	"price": [ "1", "2" ]
+	},
+	"name": "VOX resturant",
+	"branch":	
+				[
+				{"address": "Suðurlandsbraut 2", "postcode": "108"}
+				]
+	"number": "4445050"
+	"price": "4"
+	},
+	"name": "Kaffi Strætó",
+	"branch":	
+				[
+				{"address": "Þönglabakka 4", "postcode": "109"}
+				]
+	"number": "5572700"
+	"price": "1"
+	},
+	"name": "Blásteinn",
+	"branch":	
+				[
+				{"address": "Hraunbæ 102", "postcode": "110"}
+				]
+	"number": "5673311"
+	"price": "1"
+	},
+	"name": "Gallerý Fiskur",
+	"branch":	
+				[
+				{"address": "Nethyl 2", "postcode": "110"}
+				]
+	"number": "5872882"
+	"price": [ "2", "3" ]
+	},
+	"name": "Rakang thai",
+	"branch":	
+				[
+				{"address": "Langrimi 21-23", "postcode": "112"}
+				{"address": "Lyngháls 4", "postcode": "110"}
+				]
+	"number": "5787272"
+	"price": "2"
+	},
+	"name": "Pizzan",
+	"branch":	
+				[
+				{"address": "Smiðsbúð 9", "postcode": "210"}
+				{"address": "Núpalind 1", "postcode": "201"}
+				{"address": "Hverafold 1-3", "postcode": "112"}
+				{"address": "Strandgötu 75", "postcode": "220"}
+				{"address": "Reykjavíkurvegi 62", "postcode": "220"}
+				]
+	"number": "5659440"
+	"price": "1"
+	},
+	"name": "Gullhamrar",
+	"branch":	
+				[
+				{"address": "Þjóðhidarstíg 2", "postcode": "113"}
+				]
+	"number": "5179090"
+	"price": "4"
+	},
+	"name": "Esjustofa",
+	"branch":	
+				[
+				{"address": "Esjuhlíðum við Mógilsá", "postcode": "116"}
+				]
+	"number": "5653200"
+	"price": "2"
+	},
+	"name": "Café Retro",
+	"branch":	
+				[
+				{"address": "Hamraborg 3", "postcode": "200"}
+				]
+	"number": "4564000"
+	"price": [ "1", "2" ]
+	},
+	"name": "Catalina",
+	"branch":	
+				[
+				{"address": "Hamraborg 11", "postcode": "200"}
+				]
+	"number": "5542166"
+	"price": "1"
+	},
+	"name": "Heitt og Kalt",
+	"branch":	
+				[
+				{"address": "Kársnesbraut 112", "postcode": "200"}
+				]
+	"number": "5333060"
+	"price": [ "1", "2" ]
+	},
+	"name": "Rauði Riddarinn",
+	"branch":	
+				[
+				{"address": "Engihjalli 8", "postcode": "200"}
+				]
+	"number": "5557522"
+	"price": "1"
+	},
+	"name": "Thailand",
+	"branch":	
+				[
+				{"address": "Engihjalli 8", "postcode": "200"}
+				]
+	"number": "5772444"
+	"price": "2"
+	},
+	"name": "Café Adesso",
+	"branch":	
+				[
+				{"address": "Hagasmára 1", "postcode": "201"}
+				]
+	"number": "5442332"
+	"price": [ "1", "2" ]
+	},
+	"name": "Castello",
+	"branch":	
+				[
+				{"address": "Dalsvegi 2", "postcode": "201"}
+				{"address": "Dalshrauni 13", "postcode": "220"}
+				]
+	"number": "5773333"
+	"price": "1"
+	},
+	"name": "Energia",
+	"branch":	
+				[
+				{"address": "Hagasmára 1", "postcode": "201"}
+				]
+	"number": "5777077"
+	"price": [ "2", "3" ]
+	},
+	"name": "Minilik Eþíópískt veitingahús",
+	"branch":	
+				[
+				{"address": "Hlíðsmára 15", "postcode": "201"}
+				]
+	"number": "5540908"
+	"price": "2"
+	},
+	"name": "Pizza Hut",
+	"branch":	
+				[
+				{"address": "Hagasmára 1", "postcode": "201"}
+				]
+	"number": "5332000"
+	"price": [ "1", "2" ]
+	},
+	"name": "Player's",
+	"branch":	
+				[
+				{"address": "Bæjarlind 4", "postcode": "201"}
+				]
+	"number": "5445514"
+	"price": "2"
+	},
+	"name": "Kríunes",
+	"branch":	
+				[
+				{"address": "Kríunesi Vatnsenda", "postcode": "203"}
+				]
+	"number": "5672245"
+	"price": [ "2", "3" ]
+	},
+	"name": "Café Aroma",
+	"branch":	
+				[
+				{"address": "Fjarðargötu 13-15", "postcode": "220"}
+				]
+	"number": "5556996"
+	"price": [ "1", "2" ]
+	},
+	"name": "Fjörukráin",
+	"branch":	
+				[
+				{"address": "Strandgata 55", "postcode": "220"}
+				]
+	"number": "5651213"
+	"price": "4"
+	},
+	"name": "Kænan",
+	"branch":	
+				[
+				{"address": "Óseyrarbraut 2", "postcode": "220"}
+				]
+	"number": "5651550"
+	"price": "2"
+	},
+	"name": "Súfistinn",
+	"branch":	
+				[
+				{"address": "Laugavegi 18", "postcode": "101"}
+				{"address": "Strandgötu 9", "postcode": "220"}
+				]
+	"number": "5523740"
+	"price": [ "1" , "2" ]
+	},
+	"name": "Tilveran",
+	"branch":	
+				[
+				{"address": "Linnetsstíg 1", "postcode": "220"}
+				]
+	"number": "5655250"
+	"price": "2"
+	},
+	"name": "Vort daglegt brauð",
+	"branch":	
+				[
+				{"address": "Strandgötu 49", "postcode": "220"}
+				]
+	"number": "5554046"
+	"price": "1"
+	},
+	"name": "Hlið Fisherman's Village",
+	"branch":	
+				[
+				{"address": "Hliði", "postcode": "225"}
+				]
+	"number": "5651213"
+	"price": [ "2", "3" ]
+	},
+	"name": "Áslákur",
+	"branch":	
+				[
+				{"address": "Ási", "postcode": "270"}
+				]
+	"number": "5666657"
+	"price": [ "2", "3" ]
+	},
+	"name": "Draumakaffi",
+	"branch":	
+				[
+				{"address": "Háholti 14", "postcode": "270"}
+				]
+	"number": "5868040"
+	"price": "1"
+	},
+	"name": "Grillvagninn",
+	"branch":	
+				[
+				{"address": "Flugumýri 8", "postcode": "270"}
+				]
+	"number": "8983189"
+	"price": "1"
+	},
+	"name": "Pizzabær",
+	"branch":	
+				[
+				{"address": "Þverholti 2", "postcode": "270"}
+				]
+	"number": "5668555"
+	"price": "1"
+	},
+	"name": "Habibi",
+	"branch":	
+				[
+				{"address": "Hafnarstræti 18", "postcode": "101"}
+				]
+	"number": "5785858"
+	"price": "1"
+	},
+]	

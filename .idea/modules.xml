@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/shakeit.iml" filepath="$PROJECT_DIR$/.idea/shakeit.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/shakeit/app/src/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/shakeit/app/build/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/build/intermediates/manifests/debug/debug.iml" filepath="$PROJECT_DIR$/shakeit/app/build/intermediates/manifests/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/build/intermediates/manifests/test/debug/debug.iml" filepath="$PROJECT_DIR$/shakeit/app/build/intermediates/manifests/test/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/src/main/main.iml" filepath="$PROJECT_DIR$/shakeit/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/build/generated/source/r/r.iml" filepath="$PROJECT_DIR$/shakeit/app/build/generated/source/r/r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeit/app/build/generated/source/buildConfig/test/test.iml" filepath="$PROJECT_DIR$/shakeit/app/build/generated/source/buildConfig/test/test.iml" />
+>>>>>>> 40cc51b2592c65e8b2c6927d69fa0e59d7957767
     </modules>
   </component>
 </project>
