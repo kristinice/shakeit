@@ -36,7 +36,8 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     int activityNumb;
     String [] json = new String[3];
     Random randGen = new Random();
-    int rando = randGen.nextInt(100);
+    int randoMovies = randGen.nextInt(100);
+    int randoCocktails = randGen.nextInt(77);
     Button aftur,tilbaka;
     private ShakeListener mShaker;
 
@@ -86,10 +87,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    json = movies.movieList(rando);
+                    json = movies.movieList(randoMovies);
                 }
                 if(activityNumb == 2) {
-                    json = cocktails.cocktailList(rando);
+                    json = cocktails.cocktailList(randoCocktails);
                 }
 
                 if(json == null) {
