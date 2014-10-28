@@ -43,11 +43,18 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.results_movie);
-        httpStuff = (TextView) findViewById(R.id.tvMovie);
-        httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
-
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        if(activityNumb == 1) {
+            setContentView(R.layout.results_movie);
+            httpStuff = (TextView) findViewById(R.id.tvMovie);
+            httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
+        }
+        if(activityNumb == 2) {
+            setContentView(R.layout.results_cocktails);
+            httpStuff = (TextView) findViewById(R.id.tvCocktails);
+            httpStuff2 = (TextView) findViewById(R.id.tvCocktails2);
+        }
+
         new Read().execute();
 
         aftur = (Button) findViewById(R.id.bAftur);
@@ -96,13 +103,20 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             return null;
         }
 
         @Override
         protected void onPostExecute(String [] results) {
-            httpStuff.setText(results[0]);
-            httpStuff2.setText(results[1]);
+            try {
+                httpStuff.setText(results[0]);
+                httpStuff2.setText(results[1]);
+            }
+            catch (NullPointerException e) {
+                e.printStackTrace();
+                httpStuff.setText("Shake again!");
+            }
         }
     }
 
