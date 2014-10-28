@@ -46,20 +46,26 @@ public class Cocktails {
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
             JSONArray timeline2 = last.getJSONArray("ingredients");
-            //JSONObject last2 = timeline2.getJSONObject(1);
 
             String [] lasts = new String[10];
-            String [] afengi = new String[7];
+            String [] afengi = new String[5];
             lasts[0] = last.getString("name");
             lasts[1] = last.getString("glass");
 
             for(int i = 0; i < timeline2 .length(); i++)
             {
                 JSONObject last2 = timeline2.getJSONObject(i);
-                afengi[i] = last2.getString("cl") + " " + last2.getString("ingredient") + "\n";
+                afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
             }
 
-            lasts[2] = Arrays.toString(afengi);
+            String strengur = Arrays.toString(afengi)
+                    .replace(",", "")
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replace("null", "")
+                    .trim();
+
+            lasts[2] = strengur;
 
 
             return lasts;
