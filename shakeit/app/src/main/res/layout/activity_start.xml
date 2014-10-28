@@ -1,16 +1,73 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".StartActivity">
+    tools:context=".MyActivity">
 
-    <TextView
-        android:text="@string/hello_world"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageCocktail"
+            android:layout_width="385dp"
+            android:layout_height="150dp"
+            android:src="@drawable/cocktails2" />
+
+        <TextView
+            android:id="@+id/textViewCocktails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@+string/cocktails"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp" />
+
+        <ImageView
+            android:id="@+id/imageMovies"
+            android:layout_width="385dp"
+            android:layout_height="150dp"
+            android:src="@drawable/movies" />
+
+        <TextView
+            android:id="@+id/textViewMovies"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@+string/movies"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp" />
+
+        <ImageView
+            android:id="@+id/imageRestaurants"
+            android:layout_width="385dp"
+            android:layout_height="150dp"
+            android:src="@drawable/food"/>
+
+        <TextView
+            android:id="@+id/textViewFood"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@+string/restaurants"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"/>
+
+        <ImageView
+            android:id="@+id/imageChuck"
+            android:layout_width="385dp"
+            android:layout_height="150dp"
+            android:src="@drawable/chuck" />
+
+        <TextView
+            android:id="@+id/textViewChuck"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@+string/chuck"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp" />
+
+    </LinearLayout>
+</ScrollView>
