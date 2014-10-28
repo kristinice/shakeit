@@ -35,13 +35,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView httpStuff2;
     int activityNumb;
     String [] json = new String[3];
-    String json2;
     Random randGen = new Random();
     int rando = randGen.nextInt(100);
     Button aftur,tilbaka;
     private ShakeListener mShaker;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +69,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 finish();
                 startActivity(bVR);
 
-
-
-
             }
         });
     }
-
-
 
     public class Read extends AsyncTask<String [], Integer, String []> {
 
@@ -88,11 +80,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             try {
                 if(activityNumb == 1) {
                     json = movies.movieList(rando);
-                    json2 = movies.movieList2(rando);
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(rando);
-                    json2 = cocktails.cocktailList2(rando);
                 }
 
                 if(json == null) {
@@ -120,6 +110,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.bAftur:
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                finish();
                 startActivity(bVR);
                 break;
             case R.id.bBack:
