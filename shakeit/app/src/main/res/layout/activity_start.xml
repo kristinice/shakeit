@@ -45,7 +45,8 @@
             android:id="@+id/imageRestaurants"
             android:layout_width="385dp"
             android:layout_height="150dp"
-            android:src="@drawable/food"/>
+            android:src="@drawable/food"
+            />
 
         <TextView
             android:id="@+id/textViewFood"

@@ -10,51 +10,80 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * að notandi hefur valið sér flokk.
  */
 
-import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ImageView;
 
-public class StartActivity extends ListActivity {
-
-    String classes[] = { "Movies", "Cocktails", "Chuck Norris Jokes", "Resturants"};
+public class StartActivity extends Activity implements View.OnClickListener{
+    ImageView imageMovies;
+    ImageView imageCocktail;
+    ImageView imageRestaurants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
 
+
         //fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setListAdapter(new ArrayAdapter<String>(StartActivity.this,
-                android.R.layout.simple_list_item_1, classes));
+        setContentView(R.layout.activity_start);
+
+        imageMovies = (ImageView) findViewById(R.id.imageMovies);
+        imageMovies.setOnClickListener(this);
+
+        imageCocktail = (ImageView) findViewById(R.id.imageCocktail);
+        imageCocktail.setOnClickListener(this);
+
+        imageRestaurants = (ImageView) findViewById(R.id.imageRestaurants);
+        imageRestaurants.setOnClickListener(this);
+
+
+
+
     }
     //int activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        // TODO Auto-generated method stub
-        super.onListItemClick(l, v, position, id);
-        String choice = classes[position];
-        if(choice.equals("Movies")) {
-            ((GlobalVariable) this.getApplication()).setActivityNumber(1);
-        }
-        if(choice.equals("Cocktails")) {
-            ((GlobalVariable) this.getApplication()).setActivityNumber(2);
-        }
-        if(choice.equals("Resturants")) {
-            ((GlobalVariable) this.getApplication()).setActivityNumber(3);
-        }
 
 
+    private void onClickMovies() {
+        ((GlobalVariable) this.getApplication()).setActivityNumber(1);
         Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
         startActivity(ourIntent);
     }
 
+    private void onClickCocktails() {
+        ((GlobalVariable) this.getApplication()).setActivityNumber(2);
+        Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
+        startActivity(ourIntent);
+    }
+
+    private void onClickRestaurants() {
+        ((GlobalVariable) this.getApplication()).setActivityNumber(3);
+        Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
+        startActivity(ourIntent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId())
+        {
+            case R.id.imageMovies:
+                onClickMovies();
+                break;
+
+            case R.id.imageCocktail:
+                onClickCocktails();
+                break;
+            case R.id.imageRestaurants:
+                onClickRestaurants();
+                break;
+        }
+    }
 }

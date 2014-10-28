@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class Movies {
     HttpClient client = new DefaultHttpClient();
-    final static String URL = "https://notendur.hi.is/~sij65/Vefforritun/Verkefni%204/movies.json";
+    final static String URL = "https://notendur.hi.is/~sij65/Hugbunadarverkefni%201/movies.json";
 
     public String [] movieList(int numb) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
@@ -42,7 +42,7 @@ public class Movies {
             JSONObject last = timeline.getJSONObject(numb);
             String [] lasts = new String[3];
             lasts[0] = last.getString("title");
-            lasts[1] = last.getString("id");
+            lasts[1] = last.getString("rank");
             return lasts;
         }
         else {
