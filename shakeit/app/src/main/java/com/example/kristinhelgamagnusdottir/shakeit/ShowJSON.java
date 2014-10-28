@@ -30,6 +30,7 @@ import java.util.Random;
 public class ShowJSON extends Activity implements View.OnClickListener{
     Movies movies = new Movies();
     Cocktails cocktails = new Cocktails();
+    Resturants resturants = new Resturants();
     ChuckNorrisJokes chuckNorrisJokes = new ChuckNorrisJokes();
     TextView httpStuff;
     TextView httpStuff2;
@@ -39,6 +40,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Random randGen = new Random();
     int randoMovies = randGen.nextInt(100);
     int randoCocktails = randGen.nextInt(77);
+    int randoResturants = randGen.nextInt(20);
     Button aftur,tilbaka;
     private ShakeListener mShaker;
 
@@ -56,6 +58,11 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             httpStuff = (TextView) findViewById(R.id.tvCocktails);
             httpStuff2 = (TextView) findViewById(R.id.tvCocktails2);
             httpStuff3 = (TextView) findViewById(R.id.tvCocktails3);
+        }
+        if(activityNumb == 3) {
+            setContentView(R.layout.results_movies);
+            httpStuff = (TextView) findViewById(R.id.tvMovie);
+            httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
         }
 
         new Read().execute();
@@ -93,6 +100,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(randoCocktails);
+                }
+                if(activityNumb == 3) {
+                    json = resturants.resturantList(randoResturants);
                 }
 
                 if(json == null) {

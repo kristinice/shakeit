@@ -21,7 +21,7 @@ import android.widget.ListView;
 
 public class StartActivity extends ListActivity {
 
-    String classes[] = { "Movies", "Cocktails", "Chuck Norris Jokes"};
+    String classes[] = { "Movies", "Cocktails", "Chuck Norris Jokes", "Resturants"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,9 @@ public class StartActivity extends ListActivity {
         }
         if(choice.equals("Cocktails")) {
             ((GlobalVariable) this.getApplication()).setActivityNumber(2);
+        }
+        if(choice.equals("Resturants")) {
+            ((GlobalVariable) this.getApplication()).setActivityNumber(3);
         }
 
 
