@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by Lenovo on 15.10.2014.
@@ -45,15 +46,22 @@ public class Cocktails {
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
             JSONArray timeline2 = last.getJSONArray("ingredients");
-            JSONObject last2 = timeline2.getJSONObject(1);
+            //JSONObject last2 = timeline2.getJSONObject(1);
 
-
-
-
-            String [] lasts = new String[3];
+            String [] lasts = new String[10];
+            String [] afengi = new String[7];
             lasts[0] = last.getString("name");
             lasts[1] = last.getString("glass");
-            lasts[2] = last2.getString("ingredient");
+
+            for(int i = 0; i < timeline2 .length(); i++)
+            {
+                JSONObject last2 = timeline2.getJSONObject(i);
+                afengi[i] = last2.getString("cl") + " " + last2.getString("ingredient") + "\n";
+            }
+
+            lasts[2] = Arrays.toString(afengi);
+
+
             return lasts;
         }
         else {

@@ -115,7 +115,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             try {
                 httpStuff.setText(results[0]);
                 httpStuff2.setText(results[1]);
-                httpStuff3.setText(results[2]);
+                if (results[2] != null) {
+                    httpStuff3.setText(results[2]);
+                }
             }
             catch (NullPointerException e) {
                 e.printStackTrace();
