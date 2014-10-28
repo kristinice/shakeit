@@ -52,10 +52,15 @@ public class Cocktails {
             lasts[0] = last.getString("name");
             lasts[1] = last.getString("glass");
 
-            for(int i = 0; i < timeline2 .length(); i++)
+            for(int i = 0; i < timeline2.length(); i++)
             {
-                JSONObject last2 = timeline2.getJSONObject(i);
+                JSONObject last2 = timeline2.getJSONObject(i);          // ATH! ÞARF AÐ FINNA ÚT ÚR HVERNIG ER HÆGT AÐ LAGA
+                if ((last2.getString("cl")) == null) {
+                    break;
+                }
+
                 afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
+
             }
 
             String strengur = Arrays.toString(afengi)
