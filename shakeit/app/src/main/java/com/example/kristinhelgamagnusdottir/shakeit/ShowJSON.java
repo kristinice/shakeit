@@ -45,12 +45,12 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         if(activityNumb == 1) {
-            setContentView(R.layout.results_movie);
+            setContentView(R.layout.results_movies);
             httpStuff = (TextView) findViewById(R.id.tvMovie);
             httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
         }
         if(activityNumb == 2) {
-            setContentView(R.layout.results_cocktails);
+            setContentView(R.layout.results_cocktail);
             httpStuff = (TextView) findViewById(R.id.tvCocktails);
             httpStuff2 = (TextView) findViewById(R.id.tvCocktails2);
         }
