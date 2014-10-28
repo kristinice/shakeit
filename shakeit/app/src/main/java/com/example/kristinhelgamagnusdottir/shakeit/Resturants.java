@@ -42,7 +42,7 @@ public class Resturants {
             JSONObject last = timeline.getJSONObject(numb);
             String [] lasts = new String[3];
             lasts[0] = last.getString("name");
-            lasts[1] = last.getString("price");
+            lasts[1] = last.getString("number");
             return lasts;
         }
         else {
