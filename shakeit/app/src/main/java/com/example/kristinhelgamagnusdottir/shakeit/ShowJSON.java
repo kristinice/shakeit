@@ -13,9 +13,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,11 +32,14 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Cocktails cocktails = new Cocktails();
     ChuckNorrisJokes chuckNorrisJokes = new ChuckNorrisJokes();
     TextView httpStuff;
+    TextView httpStuff2;
     int activityNumb;
-    String json;
+    String [] json = new String[3];
+    String json2;
     Random randGen = new Random();
     int rando = randGen.nextInt(100);
     Button aftur,tilbaka;
+    private ShakeListener mShaker;
 
 
 
@@ -43,9 +48,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_movie);
         httpStuff = (TextView) findViewById(R.id.tvMovie);
+        httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
 
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
-        new Read().execute("text");
+        new Read().execute();
 
         aftur = (Button) findViewById(R.id.bAftur);
         tilbaka = (Button) findViewById(R.id.bBack);
@@ -53,29 +59,47 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
 
+        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+
+        mShaker = new ShakeListener(this);
+        mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
+            public void onShake()
+            {
+
+                //vibe.vibrate(100);
+
+                Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                finish();
+                startActivity(bVR);
+
+
+
+
+            }
+        });
     }
 
 
 
-    public class Read extends AsyncTask<String, Integer, String> {
+    public class Read extends AsyncTask<String [], Integer, String []> {
 
         @Override
-        protected String doInBackground(String... params) {
+        protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
                     json = movies.movieList(rando);
+                    json2 = movies.movieList2(rando);
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(rando);
+                    json2 = cocktails.cocktailList2(rando);
                 }
-                if(activityNumb == 3) {
-                    json = chuckNorrisJokes.chuckNorris();
-                }
+
                 if(json == null) {
                     httpStuff.setText("Database not connected");
                 }
                 else {
-                    return json;
+                     return json;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -86,8 +110,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         }
 
         @Override
-        protected void onPostExecute(String results) {
-            httpStuff.setText(results);
+        protected void onPostExecute(String [] results) {
+            httpStuff.setText(results[0]);
+            httpStuff2.setText(results[1]);
         }
     }
 
@@ -105,6 +130,6 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+        mShaker.pause();
     }
 }

@@ -30,7 +30,7 @@ public class Cocktails {
     HttpClient client = new DefaultHttpClient();;
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/cocktails.json";
 
-    public String cocktailList(int numb) throws ClientProtocolException, IOException, JSONException {
+    public String [] cocktailList(int numb) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
         HttpGet get = new HttpGet(url.toString());
         HttpResponse r = client.execute(get);
@@ -40,12 +40,31 @@ public class Cocktails {
             String data = EntityUtils.toString(e);
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
-            String lasts = last.getString("name");
+            String [] lasts = new String[3];
+            lasts[0] = last.getString("name");
+            lasts[1] = last.getString("glass");
             return lasts;
         }
         else {
             return null;
         }
+    }
 
+    public String cocktailList2(int numb) throws ClientProtocolException, IOException, JSONException {
+        StringBuilder url = new StringBuilder(URL);
+        HttpGet get = new HttpGet(url.toString());
+        HttpResponse r = client.execute(get);
+        int status = r.getStatusLine().getStatusCode();
+        if(status == 200) {
+            HttpEntity e = r.getEntity();
+            String data = EntityUtils.toString(e);
+            JSONArray timeline = new JSONArray(data);
+            JSONObject last = timeline.getJSONObject(numb);
+            String lasts = last.getString("glass");
+            return lasts;
+        }
+        else {
+            return null;
+        }
     }
 }
