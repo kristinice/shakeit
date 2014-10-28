@@ -48,9 +48,7 @@ public class StartActivity extends ListActivity {
         if(choice.equals("Cocktails")) {
             ((GlobalVariable) this.getApplication()).setActivityNumber(2);
         }
-        if(choice.equals("Chuck Norris Jokes")) {
-            ((GlobalVariable) this.getApplication()).setActivityNumber(3);
-        }
+
 
         Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
         startActivity(ourIntent);

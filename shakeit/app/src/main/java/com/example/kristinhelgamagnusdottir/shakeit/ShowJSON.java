@@ -25,8 +25,6 @@ import android.widget.TextView;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class ShowJSON extends Activity implements View.OnClickListener{
@@ -36,7 +34,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView httpStuff;
     TextView httpStuff2;
     int activityNumb;
-    String json;
+    String [] json = new String[3];
     String json2;
     Random randGen = new Random();
     int rando = randGen.nextInt(100);
@@ -53,7 +51,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
 
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
-        new Read().execute("text");
+        new Read().execute();
 
         aftur = (Button) findViewById(R.id.bAftur);
         tilbaka = (Button) findViewById(R.id.bBack);
@@ -83,10 +81,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
 
 
-    public class Read extends AsyncTask<String, Integer, String> {
+    public class Read extends AsyncTask<String [], Integer, String []> {
 
         @Override
-        protected String doInBackground(String... params) {
+        protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
                     json = movies.movieList(rando);
@@ -96,10 +94,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                     json = cocktails.cocktailList(rando);
                     json2 = cocktails.cocktailList2(rando);
                 }
-                if(activityNumb == 3) {
-                    json = chuckNorrisJokes.chuckNorris();
-                    json2 = "";
-                }
+
                 if(json == null) {
                     httpStuff.setText("Database not connected");
                 }
@@ -115,9 +110,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         }
 
         @Override
-        protected void onPostExecute(String results) {
-            httpStuff.setText(results);
-            httpStuff2.setText(json2);
+        protected void onPostExecute(String [] results) {
+            httpStuff.setText(results[0]);
+            httpStuff2.setText(results[1]);
         }
     }
 

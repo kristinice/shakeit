@@ -30,7 +30,7 @@ public class Movies {
     HttpClient client = new DefaultHttpClient();
     final static String URL = "https://notendur.hi.is/~sij65/Vefforritun/Verkefni%204/movies.json";
 
-    public String movieList(int numb) throws ClientProtocolException, IOException, JSONException {
+    public String [] movieList(int numb) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
         HttpGet get = new HttpGet(url.toString());
         HttpResponse r = client.execute(get);
@@ -40,7 +40,9 @@ public class Movies {
             String data = EntityUtils.toString(e);
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
-            String lasts = last.getString("title");
+            String [] lasts = new String[3];
+            lasts[0] = last.getString("title");
+            lasts[1] = last.getString("id");
             return lasts;
         }
         else {
