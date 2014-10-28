@@ -10,6 +10,9 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * notandi hefur valið flokk. Cocktails nær í JSON af heimasvæði HÍ.
  */
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -30,6 +33,7 @@ public class Cocktails {
     HttpClient client = new DefaultHttpClient();;
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/cocktails.json";
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     public String [] cocktailList(int numb) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
         HttpGet get = new HttpGet(url.toString());
@@ -40,9 +44,16 @@ public class Cocktails {
             String data = EntityUtils.toString(e);
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
+            JSONArray timeline2 = last.getJSONArray("ingredients");
+            JSONObject last2 = timeline2.getJSONObject(1);
+
+
+
+
             String [] lasts = new String[3];
             lasts[0] = last.getString("name");
             lasts[1] = last.getString("glass");
+            lasts[2] = last2.getString("ingredient");
             return lasts;
         }
         else {
