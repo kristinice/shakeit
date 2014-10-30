@@ -38,6 +38,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
         }
+        else if (activityNumb == 2) {
+            setContentView(R.layout.open_cocktails);
+        }
         else {
             setContentView(R.layout.givemetext);
         }
