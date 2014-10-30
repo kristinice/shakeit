@@ -56,12 +56,11 @@ public class Movies extends Activity{
             boolean correct = false;
             //int randomNumber = randomNumber(getLengthOfArray(timeline));
             String title, genres;
-            JSONObject last = timeline.getJSONObject(randomNumber(getLengthOfArray(timeline)));
+            JSONObject last = timeline.getJSONObject(randomNumber(100));
             while(!correct){
-                last = timeline.getJSONObject(randomNumber(getLengthOfArray(timeline)));
-                title = last.getString("title");
+                last = timeline.getJSONObject(randomNumber(100));
                 genres = last.getString("genres");
-                if(genres.contains(((GlobalVariable) this.getApplication()).getRadioValue())) {
+                if(genres.contains("Drama")) {
                     correct = true;
                 }
             }
