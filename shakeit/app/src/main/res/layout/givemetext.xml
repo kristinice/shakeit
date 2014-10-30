@@ -10,14 +10,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/want_random"
         android:id="@+id/tvViltuRandom"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_random"
         android:id="@+id/bVilRandom"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,4 +27,5 @@
         android:text="@string/tilbaka"
         android:id="@+id/bTilBaka"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

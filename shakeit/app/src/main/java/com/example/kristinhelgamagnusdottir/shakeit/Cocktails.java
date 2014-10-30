@@ -50,7 +50,7 @@ public class Cocktails {
             String [] lasts = new String[10];
             String [] afengi = new String[5];
             lasts[0] = last.getString("name");
-            lasts[1] = last.getString("glass");
+            lasts[1] = last.getString("category");
 
             for(int i = 0; i < timeline2.length(); i++)
             {
