@@ -54,12 +54,13 @@ public class Cocktails {
 
             for(int i = 0; i < timeline2.length(); i++)
             {
-                JSONObject last2 = timeline2.getJSONObject(i);          // ATH! ÞARF AÐ FINNA ÚT ÚR HVERNIG ER HÆGT AÐ LAGA
-                if ((last2.getString("cl")) == null) {
+                JSONObject last2 = timeline2.getJSONObject(i);
+
+                if (last2.has("cl")) {
+                    afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
+                } else {
                     break;
                 }
-
-                afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
 
             }
 
