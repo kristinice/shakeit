@@ -8,8 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/want_random"
-        android:id="@+id/tvViltuRandom"
+        android:gravity="center"
+        android:text="@string/want_random_CT"
+        android:id="@+id/tvViltuRandomCT"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"/>
 
@@ -18,7 +19,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/tvPressButton"
-        android:id="@+id/tvPressButton"
+        android:id="@+id/tvPressButtonCT"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="270dp"/>
 
