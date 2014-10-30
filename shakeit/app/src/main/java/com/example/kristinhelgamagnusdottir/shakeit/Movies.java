@@ -40,9 +40,14 @@ public class Movies {
             String data = EntityUtils.toString(e);
             JSONArray timeline = new JSONArray(data);
             JSONObject last = timeline.getJSONObject(numb);
-            String [] lasts = new String[3];
+            String [] lasts = new String[4];
             lasts[0] = last.getString("title");
             lasts[1] = last.getString("rank");
+            lasts[2] = last.getString("genres");
+            String language = last.getString("languages");
+            String country = last.getString("country");
+            String runtime = last.getString("runtime");
+            lasts[3] = language +" / " + country + " / " + runtime;
             return lasts;
         }
         else {

@@ -27,13 +27,20 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
     Button GiveRandom, FaraTilBaka;
     private ShakeListener mShaker;
+    int activityNumb;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.givemetext);
+        activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        if(activityNumb == 1) {
+            setContentView(R.layout.results_movies);
+        }
+        else {
+            setContentView(R.layout.givemetext);
+        }
 
         GiveRandom = (Button) findViewById(R.id.bVilRandom);
         FaraTilBaka = (Button) findViewById(R.id.bTilBaka);

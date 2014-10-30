@@ -35,6 +35,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView httpStuff;
     TextView httpStuff2;
     TextView httpStuff3;
+    TextView httpStuff4;
     int activityNumb;
     String [] json = new String[3];
     Random randGen = new Random();
@@ -52,6 +53,8 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             setContentView(R.layout.results_movies);
             httpStuff = (TextView) findViewById(R.id.tvMovie);
             httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
+            httpStuff3 = (TextView) findViewById(R.id.tvMovie3);
+            httpStuff4 = (TextView) findViewById(R.id.tvMovie4);
         }
         if(activityNumb == 2) {
             setContentView(R.layout.results_cocktail);
@@ -128,6 +131,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 if (results[2] != null) {
                     httpStuff3.setText(results[2]);
                 }
+                if (results[3] != null) {
+                    httpStuff4.setText(results[3]);
+                }
+
             }
             catch (NullPointerException e) {
                 e.printStackTrace();
