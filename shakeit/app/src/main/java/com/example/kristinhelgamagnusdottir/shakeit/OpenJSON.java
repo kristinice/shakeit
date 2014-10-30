@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 /**
  * Created by kristinhelgamagnusdottir on 13/10/14.
@@ -27,6 +28,7 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
     Button GiveRandom, FaraTilBaka;
     private ShakeListener mShaker;
+
     int activityNumb;
 
 
@@ -79,6 +81,27 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 break;
         }
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_pirates:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Drama");
+                    // Pirates are the best
+                    break;
+            case R.id.radio_ninjas:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Crime");
+                    // Ninjas rule
+                    break;
+        }
+    }
+
+
 
     @Override
     protected void onPause() {

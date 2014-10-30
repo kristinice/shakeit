@@ -99,7 +99,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    json = movies.movieList(randoMovies);
+                    json = movies.movieList();
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(randoCocktails);
