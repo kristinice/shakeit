@@ -37,6 +37,7 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        ((GlobalVariable) this.getApplication()).setRadioValue("");
         //globalVariable.setRadioValue("");
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
@@ -114,6 +115,18 @@ public class OpenJSON extends Activity implements View.OnClickListener {
             case R.id.scifi:
                 if (checked)
                     ((GlobalVariable) this.getApplication()).setRadioValue("Sci-Fi");
+                break;
+            case R.id.vodka:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Vodka");
+                break;
+            case R.id.rum:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("rum");
+                break;
+            case R.id.whiskey:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Whiskey");
                 break;
         }
     }

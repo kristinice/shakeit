@@ -14,6 +14,28 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"/>
 
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/vodka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vodka"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/rum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rum"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/whiskey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wiskey"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +43,7 @@
         android:text="@string/tvPressButton"
         android:id="@+id/tvPressButtonCT"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="wrap_content"

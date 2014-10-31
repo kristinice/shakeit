@@ -103,7 +103,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                     json = movies.movieList(stl);
                 }
                 if(activityNumb == 2) {
-                    json = cocktails.cocktailList(randoCocktails);
+                    json = cocktails.cocktailList(stl);
                 }
                 if(activityNumb == 3) {
                     json = resturants.resturantList(randoResturants);
@@ -150,7 +150,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 Toast.makeText(this, ((GlobalVariable) this.getApplication()).getRadioValue(), Toast.LENGTH_LONG).show();
                 //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 //finish();
-                //startActivity(bVR);
+                //startActi vity(bVR);
+                Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                finish();
+                startActivity(bVR);
                 break;
             case R.id.bBack:
                 finish();
