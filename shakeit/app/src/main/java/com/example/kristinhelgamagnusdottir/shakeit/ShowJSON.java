@@ -21,6 +21,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -37,6 +38,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView httpStuff3;
     TextView httpStuff4;
     int activityNumb;
+    String stl;
     String [] json = new String[3];
     Random randGen = new Random();
     int randoMovies = randGen.nextInt(100);
@@ -44,11 +46,11 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     int randoResturants = randGen.nextInt(20);
     Button aftur,tilbaka;
     private ShakeListener mShaker;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        stl = ((GlobalVariable) this.getApplication()).getRadioValue();
         if(activityNumb == 1) {
             setContentView(R.layout.results_movies);
             httpStuff = (TextView) findViewById(R.id.tvMovie);
@@ -94,12 +96,11 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     }
 
     public class Read extends AsyncTask<String [], Integer, String []> {
-
         @Override
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    json = movies.movieList();
+                    json = movies.movieList(stl);
                 }
                 if(activityNumb == 2) {
                     json = cocktails.cocktailList(randoCocktails);
@@ -146,9 +147,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bAftur:
-                Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
-                finish();
-                startActivity(bVR);
+                Toast.makeText(this, ((GlobalVariable) this.getApplication()).getRadioValue(), Toast.LENGTH_LONG).show();
+                //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                //finish();
+                //startActivity(bVR);
                 break;
             case R.id.bBack:
                 finish();

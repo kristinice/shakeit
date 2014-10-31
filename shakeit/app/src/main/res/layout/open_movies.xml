@@ -17,15 +17,30 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <RadioButton android:id="@+id/radio_pirates"
+        <RadioButton android:id="@+id/drama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Higher than 50"
+            android:text="Drama"
             android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/radio_ninjas"
+        <RadioButton android:id="@+id/crime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lower than 50"
+            android:text="Crime"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/adventure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adventure"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/scifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sci-Fi"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 

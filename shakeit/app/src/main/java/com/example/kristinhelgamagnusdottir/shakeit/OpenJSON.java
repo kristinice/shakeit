@@ -19,6 +19,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 /**
  * Created by kristinhelgamagnusdottir on 13/10/14.
@@ -28,15 +29,15 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
     Button GiveRandom, FaraTilBaka;
     private ShakeListener mShaker;
-
+    GlobalVariable globalVariable = new GlobalVariable();
     int activityNumb;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        //globalVariable.setRadioValue("");
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
         }
@@ -49,6 +50,8 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         GiveRandom = (Button) findViewById(R.id.bVilRandom);
         FaraTilBaka = (Button) findViewById(R.id.bTilBaka);
+
+        //onRadioButtonClicked();
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
@@ -88,16 +91,30 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.radio_pirates:
+            case R.id.drama:
                 if (checked)
+
                     ((GlobalVariable) this.getApplication()).setRadioValue("Drama");
+                Toast.makeText(this, ((GlobalVariable) this.getApplication()).getRadioValue(), Toast.LENGTH_LONG).show();
+
                     // Pirates are the best
                     break;
-            case R.id.radio_ninjas:
+            case R.id.crime:
                 if (checked)
                     ((GlobalVariable) this.getApplication()).setRadioValue("Crime");
-                    // Ninjas rule
                     break;
+            case R.id.adventure:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Adventure");
+                break;
+            case R.id.family:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Family");
+                break;
+            case R.id.scifi:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("Sci-Fi");
+                break;
         }
     }
 

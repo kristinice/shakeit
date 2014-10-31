@@ -16,7 +16,7 @@ import android.app.Application;
  */
 public class GlobalVariable extends Application {
     private int activityNumber;
-    private String radioValue = "";
+    private String radioValue;
 
     public int getActivityNumber() {
         return activityNumber;

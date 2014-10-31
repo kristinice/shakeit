@@ -30,8 +30,10 @@ import java.util.Random;
  * Created by Lenovo on 15.10.2014.
  */
 public class Movies extends Activity{
+    GlobalVariable globalVariable = new GlobalVariable();
     HttpClient client = new DefaultHttpClient();
     final static String URL = "https://notendur.hi.is/~sij65/Hugbunadarverkefni%201/movies.json";
+    //String stl = ((GlobalVariable) this.getApplication()).getRadioValue();
 
     public int randomNumber(int n) {
         Random randGen = new Random();
@@ -44,7 +46,7 @@ public class Movies extends Activity{
         return lengthofArray;
     }
 
-    public String [] movieList() throws ClientProtocolException, IOException, JSONException {
+    public String [] movieList(String radioGenre) throws ClientProtocolException, IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
         HttpGet get = new HttpGet(url.toString());
         HttpResponse r = client.execute(get);
@@ -55,12 +57,13 @@ public class Movies extends Activity{
             JSONArray timeline = new JSONArray(data);
             boolean correct = false;
             //int randomNumber = randomNumber(getLengthOfArray(timeline));
+
             String title, genres;
             JSONObject last = timeline.getJSONObject(randomNumber(100));
             while(!correct){
                 last = timeline.getJSONObject(randomNumber(100));
                 genres = last.getString("genres");
-                if(genres.contains("Drama")) {
+                if(genres.contains(radioGenre)) {
                     correct = true;
                 }
             }
