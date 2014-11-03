@@ -45,6 +45,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         else if (activityNumb == 2) {
             setContentView(R.layout.open_cocktails);
         }
+        else if (activityNumb == 3) {
+            setContentView(R.layout.open_restaurants);
+        }
         else {
             setContentView(R.layout.givemetext);
         }
@@ -128,6 +131,23 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 if (checked)
                     ((GlobalVariable) this.getApplication()).setRadioValue("Whiskey");
                 break;
+            case R.id.price1:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("1");
+                break;
+            case R.id.price2:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("2");
+                break;
+            case R.id.price3:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("3");
+                break;
+            case R.id.price4:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("4");
+                break;
+
         }
     }
 
