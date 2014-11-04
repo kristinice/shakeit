@@ -14,7 +14,6 @@ import android.app.Activity;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +38,7 @@ public class Movies extends Activity{
     //Notkun: movieList(radioGenre);
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] movieList(String radioGenre) throws ClientProtocolException, IOException, JSONException {
+    public String [] movieList(String radioGenre) throws IOException, JSONException {
 
         HttpResponse r = parseJSON.httpResponse(URL);
         int status = r.getStatusLine().getStatusCode();

@@ -10,7 +10,6 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -25,7 +24,7 @@ public class ParseJSON {
     //Notkun: httpResponse(URL);
     //Fyrir: URL er heimasíðuslóð fyrir JSON skrá.
     //Eftir: Skilað HttpResponse af JSON skránni.
-    public HttpResponse httpResponse(String URL) throws ClientProtocolException, IOException, JSONException {
+    public HttpResponse httpResponse(String URL) throws IOException, JSONException {
         StringBuilder url = new StringBuilder(URL);
         HttpGet get = new HttpGet(url.toString());
         HttpResponse r = client.execute(get);

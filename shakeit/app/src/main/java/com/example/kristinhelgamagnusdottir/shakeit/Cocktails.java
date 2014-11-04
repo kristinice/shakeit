@@ -58,11 +58,11 @@ public class Cocktails {
 
             while(!correct){
                 randomObject = jsonArray.getJSONObject(randomNumber(77));
-                JSONArray jsonArrayIndgredients = randomObject.getJSONArray("ingredients");
+                JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
 
-                for(int i = 0; i < jsonArrayIndgredients.length(); i++)
+                for(int i = 0; i < jsonArrayIngredients.length(); i++)
                 {
-                    JSONObject randomObjectIngredients = jsonArrayIndgredients.getJSONObject(i);
+                    JSONObject randomObjectIngredients = jsonArrayIngredients.getJSONObject(i);
 
                     if (randomObjectIngredients.has("ingredient")) {
                         ingredient = randomObjectIngredients.getString("ingredient");
@@ -81,16 +81,16 @@ public class Cocktails {
             }
 
 
-            JSONArray jsonArrayIndgredients = randomObject.getJSONArray("ingredients");
+            JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
 
             String [] jsonObject = new String[10];
             String [] afengi = new String[5];
             jsonObject[0] = randomObject.getString("name");
             jsonObject[1] = randomObject.getString("category");
 
-            for(int i = 0; i < jsonArrayIndgredients.length(); i++)
+            for(int i = 0; i < jsonArrayIngredients.length(); i++)
             {
-                JSONObject last2 = jsonArrayIndgredients.getJSONObject(i);
+                JSONObject last2 = jsonArrayIngredients.getJSONObject(i);
 
                 if (last2.has("cl")) {
                     afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
