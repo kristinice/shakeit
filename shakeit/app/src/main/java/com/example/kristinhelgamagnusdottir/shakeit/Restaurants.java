@@ -48,23 +48,56 @@ public class Restaurants extends Activity{
             boolean correct = false;
 
             String price;
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(121));
+            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
             while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(121));
+                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
                 price = randomObject.getString("price");
                 if(price.contains(radioGenre)) {
-                    correct = true;
+                                        correct = true;
                 }
             }
 
             String [] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("name");
-            jsonObject[1] = randomObject.getString("price")
+            String Price = randomObject.getString("price")
                     .replace("[", "")
                     .replace("]", "")
                     .replace("\"", "")
                     .replace(",", ", ")
                     .replace("null", "");
+            if (Price.contains("1, 2, 3, 4")){
+               jsonObject[1] = Price.replace("1, 2, 3, 4", "Less than 1300 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1, 2, 3")){
+                jsonObject[1] = Price.replace("1, 2, 3", "Less than 1300 kr. - 4000 kr.");
+            }
+            else if (Price.contains("2, 3, 4")){
+                jsonObject[1] = Price.replace("2, 3, 4", "1300 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1, 2")){
+                jsonObject[1] = Price.replace("1, 2", "Less than 1300 kr. - 2500 kr.");
+            }
+            else if (Price.contains("2, 3")){
+                jsonObject[1] = Price.replace("2, 3", "1300 kr. - 4000 kr.");
+            }
+            else if (Price.contains("3, 4")){
+                jsonObject[1] = Price.replace("3, 4", "2500 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1")){
+                jsonObject[1] = Price.replace("1", "Less than 1300 kr.");
+            }
+            else if (Price.contains("2")){
+                jsonObject[1] = Price.replace("2", "1300 kr. - 2500 kr.");
+            }
+            else if (Price.contains("3")){
+                jsonObject[1] = Price.replace("3", "2500 kr. - 4000 kr.");
+            }
+            else if (Price.contains("4")){
+                jsonObject[1] = Price.replace("4", "More than 4000 kr.");
+            }
+            else {
+                jsonObject[1] = randomObject.getString("price");
+            }
             jsonObject[2] = randomObject.getString("number");
 
             return jsonObject;

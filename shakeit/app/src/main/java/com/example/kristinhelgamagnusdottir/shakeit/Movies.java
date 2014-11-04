@@ -44,9 +44,9 @@ public class Movies extends Activity{
             JSONArray jsonArray = new JSONArray(data);
             boolean correct = false;
             String genres;
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(100));
+            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
             while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(100));
+                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
                 genres = randomObject.getString("genres");
                 if(genres.contains(radioGenre)) {
                     correct = true;
