@@ -85,7 +85,7 @@ public class Cocktails {
 
                 }
 
-                }
+            }
 
 
             JSONArray timeline2 = last.getJSONArray("ingredients");

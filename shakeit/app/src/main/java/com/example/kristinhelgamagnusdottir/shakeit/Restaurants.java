@@ -77,6 +77,7 @@ public class Restaurants extends Activity{
                     .replace("\"", "")
                     .replace(",", ", ")
                     .replace("null", "");
+            lasts[2] = last.getString("number");
 
             return lasts;
         }

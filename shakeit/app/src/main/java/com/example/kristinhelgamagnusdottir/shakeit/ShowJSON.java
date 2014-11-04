@@ -68,7 +68,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             setContentView(R.layout.results_restaurants);
             httpStuff = (TextView) findViewById(R.id.tvRestaurants);
             httpStuff2 = (TextView) findViewById(R.id.tvRestaurants2);
-            httpStuff2 = (TextView) findViewById(R.id.tvRestaurants3);
+            httpStuff3 = (TextView) findViewById(R.id.tvRestaurants3);
         }
 
         new Read().execute();
