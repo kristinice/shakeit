@@ -54,10 +54,10 @@ public class Cocktails {
             String ingredient;
             String [] ingredients = new String[5];
 
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(77));
+            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
 
             while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(77));
+                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
                 JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
 
                 for(int i = 0; i < jsonArrayIngredients.length(); i++)
