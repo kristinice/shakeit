@@ -29,11 +29,11 @@ public class Movies extends Activity{
     final static String URL = "https://notendur.hi.is/~sij65/Hugbunadarverkefni%201/movies.json";
 
     //Notkun:randomNumber(n);
+    //Fyrir: n er heiltala.
     //Eftir: Heiltala x sem er 0 <= x <= n
     public int randomNumber(int n) {
         Random randGen = new Random();
-        int randoMovies = randGen.nextInt(n);
-        return randoMovies;
+        return randGen.nextInt(n);
     }
 
     //Notkun: movieList(radioGenre);

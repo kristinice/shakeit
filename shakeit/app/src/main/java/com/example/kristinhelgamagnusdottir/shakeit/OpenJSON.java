@@ -19,7 +19,6 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 /**
  * Created by kristinhelgamagnusdottir on 13/10/14.
@@ -38,7 +37,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         ((GlobalVariable) this.getApplication()).setRadioValue("");
-        //globalVariable.setRadioValue("");
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
         }
@@ -97,11 +95,7 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         switch(view.getId()) {
             case R.id.drama:
                 if (checked)
-
                     ((GlobalVariable) this.getApplication()).setRadioValue("Drama");
-                Toast.makeText(this, ((GlobalVariable) this.getApplication()).getRadioValue(), Toast.LENGTH_LONG).show();
-
-                    // Pirates are the best
                     break;
             case R.id.crime:
                 if (checked)
@@ -147,7 +141,10 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 if (checked)
                     ((GlobalVariable) this.getApplication()).setRadioValue("4");
                 break;
-
+            case R.id.noFilter:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("");
+                break;
         }
     }
 
