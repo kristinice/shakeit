@@ -13,10 +13,7 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,11 +40,9 @@ public class Cocktails {
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
     public String [] cocktailList(String radioGenre) throws ClientProtocolException, IOException, JSONException {
-        HttpResponse r = parseJSON.httpResponse(URL);
-        int status = r.getStatusLine().getStatusCode();
-        if(status == 200) {
-            HttpEntity e = r.getEntity();
-            String data = EntityUtils.toString(e);
+        String data = parseJSON.BuffReader(URL);
+
+        if(data != "") {
             JSONArray jsonArray = new JSONArray(data);
             boolean correct = false;
 

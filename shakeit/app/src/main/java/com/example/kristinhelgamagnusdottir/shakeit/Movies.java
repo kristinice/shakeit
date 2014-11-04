@@ -12,9 +12,6 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 
 import android.app.Activity;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,12 +37,10 @@ public class Movies extends Activity{
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
     public String [] movieList(String radioGenre) throws IOException, JSONException {
 
-        HttpResponse r = parseJSON.httpResponse(URL);
-        int status = r.getStatusLine().getStatusCode();
+        String data = parseJSON.BuffReader(URL);
 
-        if(status == 200) {
-            HttpEntity e = r.getEntity();
-            String data = EntityUtils.toString(e);
+        if(data != "") {
+
             JSONArray jsonArray = new JSONArray(data);
             boolean correct = false;
             String genres;
