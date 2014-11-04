@@ -16,5 +16,6 @@
     <string name="title_activity_cocktail">CocktailActivity</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <color name="white">#FFFFFF</color>
 
 </resources>
