@@ -12,73 +12,90 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 
 import android.app.Activity;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Random;
 
-/**
- * Created by Lenovo on 15.10.2014.
- */
 public class Restaurants extends Activity{
-    GlobalVariable globalVariable = new GlobalVariable();
-    HttpClient client = new DefaultHttpClient();
-    final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/veitingastadir.json";
-    //String stl = ((GlobalVariable) this.getApplication()).getRadioValue();
 
+    ParseJSON parseJSON = new ParseJSON();
+    final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/veitingastadir.json";
+
+    //Notkun:randomNumber(n);
+    //Fyrir: n er heiltala
+    //Eftir: Heiltala x sem er 0 <= x <= n
     public int randomNumber(int n) {
         Random randGen = new Random();
-        int randoMovies = randGen.nextInt(n);
-        return randoMovies;
+        return randGen.nextInt(n);
     }
 
-    public int getLengthOfArray(JSONArray jsonArray) {
-        int lengthofArray = jsonArray.length();
-        return lengthofArray;
-    }
+    //Notkun: restaurantList(radioGenre);
+    //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
+    //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
+    public String [] restaurantList(String radioGenre) throws IOException, JSONException {
+        String data = parseJSON.BuffReader(URL);
 
-    public String [] restaurantList(String radioGenre) throws ClientProtocolException, IOException, JSONException {
-        StringBuilder url = new StringBuilder(URL);
-        HttpGet get = new HttpGet(url.toString());
-        HttpResponse r = client.execute(get);
-        int status = r.getStatusLine().getStatusCode();
-        if(status == 200) {
-            HttpEntity e = r.getEntity();
-            String data = EntityUtils.toString(e);
-            JSONArray timeline = new JSONArray(data);
+        if(data != "") {
+            JSONArray jsonArray = new JSONArray(data);
             boolean correct = false;
-            //int randomNumber = randomNumber(getLengthOfArray(timeline));
 
-            String title, price;
-            JSONObject last = timeline.getJSONObject(randomNumber(100));
+            String price;
+            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
             while(!correct){
-                last = timeline.getJSONObject(randomNumber(100));
-                price = last.getString("price");
+                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
+                price = randomObject.getString("price");
                 if(price.contains(radioGenre)) {
-                    correct = true;
+                                        correct = true;
                 }
             }
-            //JSONObject last = timeline.getJSONObject(randomNumber(getLengthOfArray(timeline)));
-            String [] lasts = new String[4];
-            lasts[0] = last.getString("name");
-            lasts[1] = last.getString("price")
+
+            String [] jsonObject = new String[4];
+            jsonObject[0] = randomObject.getString("name");
+            String Price = randomObject.getString("price")
                     .replace("[", "")
                     .replace("]", "")
                     .replace("\"", "")
                     .replace(",", ", ")
                     .replace("null", "");
+            if (Price.contains("1, 2, 3, 4")){
+               jsonObject[1] = Price.replace("1, 2, 3, 4", "Less than 1300 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1, 2, 3")){
+                jsonObject[1] = Price.replace("1, 2, 3", "Less than 1300 kr. - 4000 kr.");
+            }
+            else if (Price.contains("2, 3, 4")){
+                jsonObject[1] = Price.replace("2, 3, 4", "1300 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1, 2")){
+                jsonObject[1] = Price.replace("1, 2", "Less than 1300 kr. - 2500 kr.");
+            }
+            else if (Price.contains("2, 3")){
+                jsonObject[1] = Price.replace("2, 3", "1300 kr. - 4000 kr.");
+            }
+            else if (Price.contains("3, 4")){
+                jsonObject[1] = Price.replace("3, 4", "2500 kr. - More than 4000 kr.");
+            }
+            else if (Price.contains("1")){
+                jsonObject[1] = Price.replace("1", "Less than 1300 kr.");
+            }
+            else if (Price.contains("2")){
+                jsonObject[1] = Price.replace("2", "1300 kr. - 2500 kr.");
+            }
+            else if (Price.contains("3")){
+                jsonObject[1] = Price.replace("3", "2500 kr. - 4000 kr.");
+            }
+            else if (Price.contains("4")){
+                jsonObject[1] = Price.replace("4", "More than 4000 kr.");
+            }
+            else {
+                jsonObject[1] = randomObject.getString("price");
+            }
+            jsonObject[2] = randomObject.getString("number");
 
-            return lasts;
+            return jsonObject;
         }
         else {
             return null;

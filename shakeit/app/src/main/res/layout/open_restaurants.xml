@@ -22,7 +22,7 @@
         <RadioButton android:id="@+id/price1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Minna en 1300 kr."
+            android:text="Less than 1300 kr."
             android:onClick="onRadioButtonClicked"/>
         <RadioButton android:id="@+id/price2"
             android:layout_width="wrap_content"
@@ -37,7 +37,12 @@
         <RadioButton android:id="@+id/price4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meira en 4000 kr."
+            android:text="More than 4000 kr."
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/noFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No filter"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 

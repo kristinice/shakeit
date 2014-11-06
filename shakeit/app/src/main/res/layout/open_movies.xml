@@ -42,6 +42,11 @@
             android:layout_height="wrap_content"
             android:text="Sci-Fi"
             android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/noFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No filter"
+            android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 
     <Button
@@ -50,7 +55,7 @@
         android:text="@string/get_random"
         android:id="@+id/bVilRandom"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"/>
+        android:layout_marginTop="90dp"/>
 
     <Button
         android:layout_width="wrap_content"
