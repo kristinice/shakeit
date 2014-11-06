@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/finalbackmovie">
 
     <Button
         android:layout_width="wrap_content"
@@ -10,7 +11,7 @@
         android:id="@+id/bAftur"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="166dp" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -20,7 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/bAftur"
         android:layout_alignStart="@+id/bAftur"
-        android:layout_marginBottom="68dp" />
+        android:layout_marginBottom="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,25 +39,63 @@
         android:id="@+id/tvMovie"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="MovieID:"
-        android:id="@+id/textView3"
+        android:text="IMDB Rank:"
+        android:id="@+id/textView2"
         android:layout_below="@+id/tvMovie"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMovie2"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Genre:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/tvMovie2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvMovie3"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Language / Country / Runtime:"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/tvMovie3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvMovie4"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

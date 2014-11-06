@@ -2,26 +2,48 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/want_random"
-        android:id="@+id/tvViltuRandom"
+        android:gravity="center"
+        android:text="@string/want_random_CT"
+        android:id="@+id/tvViltuRandomCT"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"/>
+
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/vodka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vodka"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/rum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rum"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/whiskey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wiskey"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/tvPressButton"
-        android:id="@+id/tvPressButton"
+        android:id="@+id/tvPressButtonCT"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="270dp"/>
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="wrap_content"

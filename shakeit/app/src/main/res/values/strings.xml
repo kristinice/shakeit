@@ -4,7 +4,8 @@
     <string name="app_name">shakeit</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="want_random">Press the button to get a random movie!</string>
+    <string name="want_random">Shake me to get a suggestion!</string>
+    <string name="want_random_CT">Shake me to get a suggestion of an excellent cocktail!</string>
     <string name="get_random">Give me a suggestion</string>
     <string name="get_random_again">Give me another suggestion</string>
     <string name="tilbaka">Go back</string>
@@ -16,6 +17,12 @@
     <string name="title_activity_cocktail">CocktailActivity</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
-    <color name="white">#FFFFFF</color>
+    <string name="cocktail_h1">Cocktail name:</string>
+    <string name="cocktail_h2">Type: </string>
+    <string name="cocktail_h3">Ingredients: </string>
+    <string name="tvPressButton">Or press this button:</string>
+
+
+>>>>>>> b2f866944fab38d04a4cf6a39d4642f6f252ed2f
 
 </resources>

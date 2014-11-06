@@ -16,10 +16,19 @@ import android.app.Application;
  */
 public class GlobalVariable extends Application {
     private int activityNumber;
+    private String radioValue;
+
     public int getActivityNumber() {
         return activityNumber;
     }
     public void setActivityNumber(int activityNumber){
         this.activityNumber = activityNumber;
+    }
+
+    public String getRadioValue() {
+        return radioValue;
+    }
+    public void setRadioValue(String radioValue){
+        this.radioValue = radioValue;
     }
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/finalbacktail">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
         android:layout_width="wrap_content"
@@ -27,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/cocktail_h1"
+        android:text="Restaurant"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -36,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/tvCocktails"
+        android:id="@+id/tvRestaurants"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp" />
@@ -45,35 +44,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/cocktail_h2"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/tvCocktails"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/tvCocktails2"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/cocktail_h3"
+        android:text="Price"
         android:id="@+id/textView2"
-        android:layout_below="@+id/tvCocktails2"
+        android:layout_below="@+id/tvRestaurants"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvRestaurants2"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Number"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/tvRestaurants2"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/tvCocktails3"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/tvRestaurants3"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

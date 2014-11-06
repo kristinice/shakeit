@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/want_random"
+        android:id="@+id/tvViltuRandom"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/drama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drama"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/crime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crime"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/adventure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adventure"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/scifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sci-Fi"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_random"
+        android:id="@+id/bVilRandom"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tilbaka"
+        android:id="@+id/bTilBaka"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

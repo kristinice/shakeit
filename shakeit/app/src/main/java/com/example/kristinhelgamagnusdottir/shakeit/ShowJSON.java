@@ -21,6 +21,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -30,28 +31,32 @@ import java.util.Random;
 public class ShowJSON extends Activity implements View.OnClickListener{
     Movies movies = new Movies();
     Cocktails cocktails = new Cocktails();
-    Resturants resturants = new Resturants();
+    Restaurants restaurants = new Restaurants();
     ChuckNorrisJokes chuckNorrisJokes = new ChuckNorrisJokes();
     TextView httpStuff;
     TextView httpStuff2;
     TextView httpStuff3;
+    TextView httpStuff4;
     int activityNumb;
+    String stl;
     String [] json = new String[3];
     Random randGen = new Random();
     int randoMovies = randGen.nextInt(100);
     int randoCocktails = randGen.nextInt(77);
-    int randoResturants = randGen.nextInt(20);
+    int randoRestaurants = randGen.nextInt(20);
     Button aftur,tilbaka;
     private ShakeListener mShaker;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
+        stl = ((GlobalVariable) this.getApplication()).getRadioValue();
         if(activityNumb == 1) {
             setContentView(R.layout.results_movies);
             httpStuff = (TextView) findViewById(R.id.tvMovie);
             httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
+            httpStuff3 = (TextView) findViewById(R.id.tvMovie3);
+            httpStuff4 = (TextView) findViewById(R.id.tvMovie4);
         }
         if(activityNumb == 2) {
             setContentView(R.layout.results_cocktail);
@@ -60,9 +65,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             httpStuff3 = (TextView) findViewById(R.id.tvCocktails3);
         }
         if(activityNumb == 3) {
-            setContentView(R.layout.results_movies);
-            httpStuff = (TextView) findViewById(R.id.tvMovie);
-            httpStuff2 = (TextView) findViewById(R.id.tvMovie2);
+            setContentView(R.layout.results_restaurants);
+            httpStuff = (TextView) findViewById(R.id.tvRestaurants);
+            httpStuff2 = (TextView) findViewById(R.id.tvRestaurants2);
+            httpStuff2 = (TextView) findViewById(R.id.tvRestaurants3);
         }
 
         new Read().execute();
@@ -91,18 +97,17 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     }
 
     public class Read extends AsyncTask<String [], Integer, String []> {
-
         @Override
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    json = movies.movieList(randoMovies);
+                    json = movies.movieList(stl);
                 }
                 if(activityNumb == 2) {
-                    json = cocktails.cocktailList(randoCocktails);
+                    json = cocktails.cocktailList(stl);
                 }
                 if(activityNumb == 3) {
-                    json = resturants.resturantList(randoResturants);
+                    json = restaurants.restaurantList(stl);
                 }
 
                 if(json == null) {
@@ -128,6 +133,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 if (results[2] != null) {
                     httpStuff3.setText(results[2]);
                 }
+                if (results[3] != null) {
+                    httpStuff4.setText(results[3]);
+                }
+
             }
             catch (NullPointerException e) {
                 e.printStackTrace();
@@ -139,6 +148,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bAftur:
+                Toast.makeText(this, ((GlobalVariable) this.getApplication()).getRadioValue(), Toast.LENGTH_LONG).show();
+                //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
+                //finish();
+                //startActi vity(bVR);
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 finish();
                 startActivity(bVR);
