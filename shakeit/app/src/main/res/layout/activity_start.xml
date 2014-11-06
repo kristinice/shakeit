@@ -61,7 +61,7 @@
             android:id="@+id/imageChuck"
             android:layout_width="385dp"
             android:layout_height="150dp"
-            android:src="@drawable/chuck" />
+            android:src="@drawable/funny" />
 
         <TextView
             android:id="@+id/textViewChuck"
