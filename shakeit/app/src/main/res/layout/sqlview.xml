@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+            android:layout_height="fill_parent">
+            <TableRow>
+                <TextView android:text="Movie" android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    ></TextView>
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView android:text="get info from db" android:id="@+id/tvSQLinfo"
+            android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Remove movie by ID from watchlist:"
+        android:id="@+id/tvRemovetext"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Id:"
+        android:id="@+id/tvIdtext"
+        android:layout_toLeftOf="@+id/tvRemovetext"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etIdDelete"
+        android:layout_toLeftOf="@+id/tvIdtext"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove from watchlist"
+        android:id="@+id/bRemove"
+        android:layout_marginTop="20dp" />
+
+
+</LinearLayout>

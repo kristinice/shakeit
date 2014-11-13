@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.app.Dialog;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     String [] checkboxValue;
     String [] jsonObject = new String[3];
 
-    Button aftur,tilbaka;
+    Button aftur,tilbaka,favorite;
     private ShakeListener mShaker;
 
     @Override
@@ -70,9 +70,11 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
         aftur = (Button) findViewById(R.id.bAftur);
         tilbaka = (Button) findViewById(R.id.bBack);
+        favorite = (Button) findViewById(R.id.bFavorite);
 
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
+        favorite.setOnClickListener(this);
 
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
@@ -137,8 +139,38 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         }
     }
 
-    public void onClick(View view) {
-        switch (view.getId()) {
+    public void onClick(View arg0) {
+        switch (arg0.getId()) {
+            case R.id.bFavorite:
+                boolean didItWork = true;
+                try {
+                    String title = textView.getText().toString();
+
+                    Favorites entry = new Favorites(ShowJSON.this);
+                    entry.open();
+                    entry.createEntry(title);
+                    entry.close();
+
+                } catch (Exception e) {
+                    didItWork = false;
+                    String error = e.toString();
+                    Dialog d = new Dialog(this);
+                    d.setTitle("Error came up!");
+                    TextView tv = new TextView(this);
+                    tv.setText(error);
+                    d.setContentView(tv);
+                    d.show();
+                } finally {
+                    if (didItWork) {
+                        Dialog d = new Dialog(this);
+                        d.setTitle("Worked!");
+                        TextView tv = new TextView(this);
+                        tv.setText("Success");
+                        d.setContentView(tv);
+                        d.show();
+                    }
+                }
+                break;
             case R.id.bAftur:
                 //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 //finish();

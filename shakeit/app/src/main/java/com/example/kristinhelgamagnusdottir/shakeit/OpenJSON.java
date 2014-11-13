@@ -12,8 +12,10 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,7 +27,7 @@ import android.widget.Toast;
 
 public class OpenJSON extends Activity implements View.OnClickListener {
 
-    Button GiveRandom, FaraTilBaka;
+    Button GiveRandom, FaraTilBaka, sqlView;
     private ShakeListener mShaker;
     GlobalVariable globalVariable = new GlobalVariable();
     int activityNumb;
@@ -55,11 +57,14 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         GiveRandom = (Button) findViewById(R.id.bVilRandom);
         FaraTilBaka = (Button) findViewById(R.id.bTilBaka);
+        sqlView = (Button) findViewById(R.id.bSQLopenView);
 
         //onRadioButtonClicked();
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
+        sqlView.setOnClickListener(this);
+        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
@@ -82,6 +87,11 @@ public class OpenJSON extends Activity implements View.OnClickListener {
             case R.id.bVilRandom:
                 Intent bVR = new Intent(OpenJSON.this, ShowJSON.class);
                 startActivity(bVR);
+                break;
+            case R.id.bSQLopenView:
+                Intent i = new Intent("com.example.kristinhelgamagnusdottir.shakeit.SQLView");
+                //finish();
+                startActivity(i);
                 break;
             case R.id.bTilBaka:
                 finish();
