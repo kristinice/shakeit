@@ -1,5 +1,12 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
+/**
+ * Höfundur: Óþekktur af interneti
+ * Dagsetning: Fenginn 25 oktober 2014
+ *
+ *Þessi klasi nemur hristing á síma og lætur vita ef svo hefur gerst.
+ */
+
 import android.content.Context;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;

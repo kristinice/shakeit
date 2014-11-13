@@ -5,9 +5,9 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Útgáfa: 1.0
  * Dagsetning: 28. október 2014
  *
- * Þessir klasar eru hönnuðir fyrir því hvað skal gera við hverja JSON skrá sem fæst af netinu.
- * ShowJSON notar klasana eftir að GlobalVariable hefur sagt hvaða klasi eigi að keyrast ef að
- * notandi hefur valið flokk. Movies nær í JSON af heimasvæði HÍ.
+ * Þessi klasi ákveður hvað eigi að taka úr JSON skránni sem fæst af netinu og birta.
+ * Klasinn notar sér opnun frá ParseJSON til þess að geta unnið með upplýsingarnar.
+ *
  */
 
 import android.app.Activity;

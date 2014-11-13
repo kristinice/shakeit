@@ -12,13 +12,12 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 /**
  * Created by kristinhelgamagnusdottir on 13/10/14.
@@ -30,6 +29,7 @@ public class OpenJSON extends Activity implements View.OnClickListener {
     private ShakeListener mShaker;
     GlobalVariable globalVariable = new GlobalVariable();
     int activityNumb;
+    String [] jebb = new String[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         ((GlobalVariable) this.getApplication()).setRadioValue("");
+        for(int i=0; i<6; i++) {
+            ((GlobalVariable) this.getApplication()).setCheckboxValues("", i);
+        }
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
         }
@@ -57,7 +60,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
-        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
@@ -87,64 +89,69 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         }
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.drama:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Drama");
+        if(activityNumb == 1) {
+            // Check which checkbox was clicked
+            switch (view.getId()) {
+                case R.id.checkbox_crime:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Crime", 0);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[0] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
                     break;
-            case R.id.crime:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Crime");
+                case R.id.checkbox_drama:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Drama", 1);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[1] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
                     break;
-            case R.id.adventure:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Adventure");
-                break;
-            case R.id.family:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Family");
-                break;
-            case R.id.scifi:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Sci-Fi");
-                break;
-            case R.id.vodka:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Vodka");
-                break;
-            case R.id.rum:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("rum");
-                break;
-            case R.id.whiskey:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Whiskey");
-                break;
-            case R.id.price1:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("1");
-                break;
-            case R.id.price2:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("2");
-                break;
-            case R.id.price3:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("3");
-                break;
-            case R.id.price4:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("4");
-                break;
-            case R.id.noFilter:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("");
-                break;
+                case R.id.checkbox_adventure:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Adventure", 2);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
+                    break;
+                case R.id.checkbox_family:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Family", 3);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[3] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 3);
+                    break;
+                case R.id.checkbox_scifi:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Sci-Fi", 4);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[4] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 4);
+                    break;
+                case R.id.checkbox_comedy:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Comedy", 5);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[5] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 5);
+                    break;
+                // TODO: Veggie sandwich
+            }
         }
     }
 

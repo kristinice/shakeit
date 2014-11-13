@@ -33,6 +33,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView textView, textView2, textView3, textView4;
     int activityNumb;
     String stl;
+    String [] checkboxValue;
     String [] jsonObject = new String[3];
 
     Button aftur,tilbaka;
@@ -43,6 +44,8 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         stl = ((GlobalVariable) this.getApplication()).getRadioValue();
+        checkboxValue = new String[6];
+        checkboxValue = ((GlobalVariable) this.getApplication()).getCheckboxValues();
         if(activityNumb == 1) {
             setContentView(R.layout.results_movies);
             textView = (TextView) findViewById(R.id.tvMovie);
@@ -90,7 +93,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    jsonObject = movies.movieList(stl);
+                    jsonObject = movies.movieList(checkboxValue);
                 }
                 if(activityNumb == 2) {
                     jsonObject = cocktails.cocktailList(stl);
