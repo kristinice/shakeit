@@ -64,13 +64,16 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
         GiveRandom = (Button) findViewById(R.id.bVilRandom);
         FaraTilBaka = (Button) findViewById(R.id.bTilBaka);
-        sqlView = (Button) findViewById(R.id.bSQLopenView);
+
 
         //onRadioButtonClicked();
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
-        sqlView.setOnClickListener(this);
+        if(activityNumb == 1) {
+            sqlView = (Button) findViewById(R.id.bSQLopenView);
+            sqlView.setOnClickListener(this);
+        }
         final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mShaker = new ShakeListener(this);
@@ -170,7 +173,41 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 5);
                     break;
-                // TODO: Veggie sandwich
+
+            }
+        }
+
+        if(activityNumb == 2) {
+            // Check which checkbox was clicked
+            switch (view.getId()) {
+                case R.id.checkbox_vodka:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Vodka", 0);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[0] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
+                    break;
+                case R.id.checkbox_rum:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Rum", 1);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[1] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
+                    break;
+                case R.id.checkbox_wiskey:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Wiskey", 2);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
+                    break;
+
             }
         }
     }
