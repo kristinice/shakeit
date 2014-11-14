@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -37,6 +39,11 @@ public class OpenJSON extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         ((GlobalVariable) this.getApplication()).setRadioValue("");
         for(int i=0; i<6; i++) {
@@ -77,8 +84,11 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
 
 
+
+
             }
         });
+
     }
 
     public void onClick(View view) {
