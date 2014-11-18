@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -26,6 +27,7 @@ public class Cocktails {
 
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/cocktails.json";
+    ArrayList al = new ArrayList();
 
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala
@@ -39,77 +41,76 @@ public class Cocktails {
     //Notkun: cocktailsList(radioGenre);
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] cocktailList(String radioGenre) throws ClientProtocolException, IOException, JSONException {
+    public String [] cocktailList(String [] checkboxValue) throws ClientProtocolException, IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
         if(data != "") {
+
             JSONArray jsonArray = new JSONArray(data);
-            boolean correct = false;
+            String ingredient = "";
+            JSONObject randomObject;
+            JSONArray jsonArrayIngredients;
 
-            String ingredient;
-            String [] ingredients = new String[5];
+            al = selectedValues(ingredient,jsonArray,checkboxValue);
+            int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
 
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
+            randomObject = jsonArray.getJSONObject(m);
 
-            while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
-                JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
-
-                for(int i = 0; i < jsonArrayIngredients.length(); i++)
-                {
-                    JSONObject randomObjectIngredients = jsonArrayIngredients.getJSONObject(i);
-
-                    if (randomObjectIngredients.has("ingredient")) {
-                        ingredient = randomObjectIngredients.getString("ingredient");
-                        if (ingredient.contains(radioGenre)) {
-                            correct = true;
-                        }
-                        else {
-                            continue;
-                        }
-                    } else {
-                        break;
-                    }
-
-                }
-
-            }
-
-
-            JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
 
             String [] jsonObject = new String[10];
-            String [] afengi = new String[5];
             jsonObject[0] = randomObject.getString("name");
             jsonObject[1] = randomObject.getString("category");
-
-            for(int i = 0; i < jsonArrayIngredients.length(); i++)
-            {
-                JSONObject last2 = jsonArrayIngredients.getJSONObject(i);
-
-                if (last2.has("cl")) {
-                    afengi[i] = last2.getString("cl") + " cl of " + last2.getString("ingredient") + "\n";
-                } else {
-                    break;
-                }
-
-            }
-
-            String strengur = Arrays.toString(afengi)
-                    .replace(",", "")
-                    .replace("[", "")
-                    .replace("]", "")
-                    .replace("null", "")
-                    .trim();
-
-            jsonObject[2] = strengur;
-
+            jsonObject[2] = getIngredients(randomObject);
 
             return jsonObject;
         }
         else {
             return null;
         }
+    }
+
+    public String stringTrim(String [] afengi) {
+        String finalString = Arrays.toString(afengi)
+                .replace(",", "")
+                .replace("[", "")
+                .replace("]", "")
+                .replace("null", "")
+                .trim();
+        return finalString;
+    }
+
+    public ArrayList selectedValues(String ingredient, JSONArray jsonArray, String [] checkboxValue)throws JSONException {
+        JSONObject randomObject;
+        ArrayList arrayList = new ArrayList();
+
+        for(int i=0; i<jsonArray.length();i++) {
+            randomObject = jsonArray.getJSONObject(i);
+            ingredient = randomObject.toString();
+            if(ingredient.contains(checkboxValue[0]) || ingredient.contains(checkboxValue[1]) || ingredient.contains(checkboxValue[2])){
+                arrayList.add(i);
+            }
+        }
+        return arrayList;
+    }
+
+    public String getIngredients(JSONObject randomObject) throws JSONException {
+        JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
+        String [] afengi = new String[10];
+        String finalString;
+
+        for(int i = 0; i < jsonArrayIngredients.length(); i++) {
+            JSONObject jObjIngredients = jsonArrayIngredients.getJSONObject(i);
+            if (jObjIngredients.has("cl")) {
+                afengi[i] = jObjIngredients.getString("cl") + " cl of " + jObjIngredients.getString("ingredient") + "\n";
+            } else {
+                break;
+            }
+
+        }
+
+        finalString = stringTrim(afengi);
+        return finalString;
+
     }
 
 }

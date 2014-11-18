@@ -108,7 +108,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                     jsonObject = movies.movieList(checkboxValue);
                 }
                 if(activityNumb == 2) {
-                    jsonObject = cocktails.cocktailList(stl);
+                    jsonObject = cocktails.cocktailList(checkboxValue);
                 }
                 if(activityNumb == 3) {
                     jsonObject = restaurants.restaurantList(stl);
