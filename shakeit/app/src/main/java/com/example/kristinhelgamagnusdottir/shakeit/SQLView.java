@@ -38,6 +38,8 @@ public class SQLView extends Activity {
         movieList = (ListView) findViewById(R.id.listView);
         movieList.setItemsCanFocus(false);
         movieList.setAdapter(movieAdapter);
+        //movieList.invalidate();
+        //movieAdapter.notifyDataSetChanged();
 
     }
 

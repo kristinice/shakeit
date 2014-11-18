@@ -55,7 +55,7 @@ public class MovieCustomAdapter extends ArrayAdapter<Movie> {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Log.i("Delete Button Clicked", "**********");
-                Toast.makeText(context, "Delete button Clicked" + position,
+                Toast.makeText(context, "This movie has been removed from your list",
                         Toast.LENGTH_LONG).show();
 
 
@@ -65,7 +65,6 @@ public class MovieCustomAdapter extends ArrayAdapter<Movie> {
                 ex1.open();
                 ex1.deleteEntry(lRow1);
                 ex1.close();
-                notifyDataSetChanged ();
 
             }
         });
