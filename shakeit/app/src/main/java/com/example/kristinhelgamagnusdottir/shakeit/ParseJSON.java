@@ -6,7 +6,7 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Dagsetning: 4 nóvember 2014
  *
  * Þessi klasi tekur við url af staðsetningu JSON skrár,
- * tekur hana inn í appið og opnar hana
+ * tekur hana inn í appið og opnar hana. Encode-aður fyrir íslenska stafi.
  */
 
 import org.apache.http.HttpResponse;

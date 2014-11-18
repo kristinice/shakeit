@@ -14,32 +14,22 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"/>
 
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
+    <CheckBox android:id="@+id/checkbox_vodka"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RadioButton android:id="@+id/vodka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vodka"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/rum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rum"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/whiskey"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wiskey"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/noFilter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No filter"
-            android:onClick="onRadioButtonClicked"/>
-    </RadioGroup>
+        android:text="Vodka"
+        android:onClick="onCheckboxClicked"/>
+    <CheckBox android:id="@+id/checkbox_rum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rum"
+        android:onClick="onCheckboxClicked"/>
+    <CheckBox android:id="@+id/checkbox_wiskey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wiskey"
+        android:onClick="onCheckboxClicked"/>
+
 
     <TextView
         android:layout_width="wrap_content"

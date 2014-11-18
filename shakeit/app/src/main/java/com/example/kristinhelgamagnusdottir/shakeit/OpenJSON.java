@@ -17,8 +17,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 /**
  * Created by kristinhelgamagnusdottir on 13/10/14.
@@ -26,17 +30,26 @@ import android.widget.RadioButton;
 
 public class OpenJSON extends Activity implements View.OnClickListener {
 
-    Button GiveRandom, FaraTilBaka;
+    Button GiveRandom, FaraTilBaka, sqlView;
     private ShakeListener mShaker;
     GlobalVariable globalVariable = new GlobalVariable();
     int activityNumb;
+    String [] jebb = new String[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         ((GlobalVariable) this.getApplication()).setRadioValue("");
+        for(int i=0; i<6; i++) {
+            ((GlobalVariable) this.getApplication()).setCheckboxValues("", i);
+        }
         if(activityNumb == 1) {
             setContentView(R.layout.open_movies);
         }
@@ -53,10 +66,15 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         GiveRandom = (Button) findViewById(R.id.bVilRandom);
         FaraTilBaka = (Button) findViewById(R.id.bTilBaka);
 
+
         //onRadioButtonClicked();
 
         GiveRandom.setOnClickListener(this);
         FaraTilBaka.setOnClickListener(this);
+        if(activityNumb == 1) {
+            sqlView = (Button) findViewById(R.id.bSQLopenView);
+            sqlView.setOnClickListener(this);
+        }
         final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mShaker = new ShakeListener(this);
@@ -70,8 +88,11 @@ public class OpenJSON extends Activity implements View.OnClickListener {
 
 
 
+
+
             }
         });
+
     }
 
     public void onClick(View view) {
@@ -81,50 +102,110 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 Intent bVR = new Intent(OpenJSON.this, ShowJSON.class);
                 startActivity(bVR);
                 break;
+            case R.id.bSQLopenView:
+                Intent i = new Intent("com.example.kristinhelgamagnusdottir.shakeit.SQLView");
+                //finish();
+                startActivity(i);
+                break;
             case R.id.bTilBaka:
                 finish();
                 break;
         }
     }
 
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        if(activityNumb == 1) {
+            // Check which checkbox was clicked
+            switch (view.getId()) {
+                case R.id.checkbox_crime:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Crime", 0);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
+                    break;
+                case R.id.checkbox_drama:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Drama", 1);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
+                    break;
+                case R.id.checkbox_adventure:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Adventure", 2);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
+                    break;
+                case R.id.checkbox_family:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Family", 3);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 3);
+                    break;
+                case R.id.checkbox_scifi:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Sci-Fi", 4);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 4);
+                    break;
+                case R.id.checkbox_comedy:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Comedy", 5);
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 5);
+                    break;
+
+            }
+        }
+
+        if(activityNumb == 2) {
+            // Check which checkbox was clicked
+            switch (view.getId()) {
+                case R.id.checkbox_vodka:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Vodka", 0);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[0] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
+                    break;
+                case R.id.checkbox_rum:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Rum", 1);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(),jebb[1] , Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
+                    break;
+                case R.id.checkbox_wiskey:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Wiskey", 2);
+                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
+                    break;
+
+            }
+        }
+    }
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.drama:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Drama");
-                    break;
-            case R.id.crime:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Crime");
-                    break;
-            case R.id.adventure:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Adventure");
-                break;
-            case R.id.family:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Family");
-                break;
-            case R.id.scifi:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Sci-Fi");
-                break;
-            case R.id.vodka:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Vodka");
-                break;
-            case R.id.rum:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("rum");
-                break;
-            case R.id.whiskey:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("Whiskey");
-                break;
             case R.id.price1:
                 if (checked)
                     ((GlobalVariable) this.getApplication()).setRadioValue("1");

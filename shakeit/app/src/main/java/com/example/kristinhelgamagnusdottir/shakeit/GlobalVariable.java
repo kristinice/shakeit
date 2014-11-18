@@ -15,6 +15,7 @@ import android.app.Application;
 public class GlobalVariable extends Application {
     private int activityNumber;
     private String radioValue;
+    private String [] checkboxValues = new String[6];
 
     //Notkun:getActivityNumber();
     //Eftir: Skilar heiltölunni activityNumber
@@ -41,5 +42,20 @@ public class GlobalVariable extends Application {
     public void setRadioValue(String radioValue){
         this.radioValue = radioValue;
     }
+
+    //Notkun: setRadioValue(radioValue);
+    //Fyrir: radioValue er strengur.
+    //Eftir: Breytt hefur verið gildinu á radioValue.
+    public void setCheckboxValues(String checkboxValue, int arrayNumber){
+        this.checkboxValues[arrayNumber] = checkboxValue;
+    }
+
+    //Notkun:getRadioValue();
+    //Eftir: Skilar strengnum radioValue
+    public String [] getCheckboxValues() {
+        return checkboxValues;
+    }
+
+
 
 }

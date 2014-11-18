@@ -17,9 +17,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.app.Dialog;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -33,16 +35,24 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     TextView textView, textView2, textView3, textView4;
     int activityNumb;
     String stl;
+    String [] checkboxValue;
     String [] jsonObject = new String[3];
 
-    Button aftur,tilbaka;
+    Button aftur,tilbaka,favorite;
     private ShakeListener mShaker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
         stl = ((GlobalVariable) this.getApplication()).getRadioValue();
+        checkboxValue = new String[6];
+        checkboxValue = ((GlobalVariable) this.getApplication()).getCheckboxValues();
         if(activityNumb == 1) {
             setContentView(R.layout.results_movies);
             textView = (TextView) findViewById(R.id.tvMovie);
@@ -67,10 +77,13 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
         aftur = (Button) findViewById(R.id.bAftur);
         tilbaka = (Button) findViewById(R.id.bBack);
+        favorite = (Button) findViewById(R.id.bFavorite);
 
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
-
+        if(activityNumb == 1) {
+            favorite.setOnClickListener(this);
+        }
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
             public void onShake()
@@ -83,6 +96,8 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
             }
         });
+
+
     }
 
     public class Read extends AsyncTask<String [], Integer, String []> {
@@ -90,7 +105,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         protected String [] doInBackground(String []... params) {
             try {
                 if(activityNumb == 1) {
-                    jsonObject = movies.movieList(stl);
+                    jsonObject = movies.movieList(checkboxValue);
                 }
                 if(activityNumb == 2) {
                     jsonObject = cocktails.cocktailList(stl);
@@ -134,8 +149,38 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         }
     }
 
-    public void onClick(View view) {
-        switch (view.getId()) {
+    public void onClick(View arg0) {
+        switch (arg0.getId()) {
+            case R.id.bFavorite:
+                boolean didItWork = true;
+                try {
+                    String title = textView.getText().toString();
+
+                    Favorites entry = new Favorites(ShowJSON.this);
+                    entry.open();
+                    entry.createEntry(title);
+                    entry.close();
+
+                } catch (Exception e) {
+                    didItWork = false;
+                    String error = e.toString();
+                    Dialog d = new Dialog(this);
+                    d.setTitle("Error came up!");
+                    TextView tv = new TextView(this);
+                    tv.setText(error);
+                    d.setContentView(tv);
+                    d.show();
+                } finally {
+                    if (didItWork) {
+                        Dialog d = new Dialog(this);
+                        d.setTitle("Worked!");
+                        TextView tv = new TextView(this);
+                        tv.setText("Success");
+                        d.setContentView(tv);
+                        d.show();
+                    }
+                }
+                break;
             case R.id.bAftur:
                 //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 //finish();

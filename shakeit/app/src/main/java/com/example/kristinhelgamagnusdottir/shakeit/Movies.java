@@ -17,12 +17,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Movies extends Activity{
 
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/~sij65/Hugbunadarverkefni%201/movies.json";
+    ArrayList al = new ArrayList();
+    ArrayList al2 = new ArrayList();
 
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala.
@@ -35,23 +38,41 @@ public class Movies extends Activity{
     //Notkun: movieList(radioGenre);
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] movieList(String radioGenre) throws IOException, JSONException {
+    public String [] movieList(String [] checkboxValue) throws IOException, JSONException {
 
         String data = parseJSON.BuffReader(URL);
 
         if(data != "") {
 
             JSONArray jsonArray = new JSONArray(data);
-            boolean correct = false;
             String genres;
+
             JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
-            while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
+
+            for(int i=0; i<jsonArray.length();i++) {
+                randomObject = jsonArray.getJSONObject(i);
                 genres = randomObject.getString("genres");
-                if(genres.contains(radioGenre)) {
-                    correct = true;
+                if((genres.contains(checkboxValue[0])) && (genres.contains(checkboxValue[1]))&&
+                (genres.contains(checkboxValue[2])) && (genres.contains(checkboxValue[3])) &&
+                        (genres.contains(checkboxValue[4]))&&(genres.contains(checkboxValue[5]))){
+                    al.add(i);
+
                 }
             }
+
+
+
+
+            int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
+            String [] tilraun = new String[4];
+            tilraun[0] = al.get(0).toString();
+            tilraun[1] = Integer.toString(randomNumber(26));
+            tilraun[2] = checkboxValue[2];
+            tilraun[3] = Integer.toString(al.size());
+
+
+
+            randomObject = jsonArray.getJSONObject(m);
 
             String [] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("title");
@@ -60,7 +81,7 @@ public class Movies extends Activity{
             String language = randomObject.getString("languages");
             String country = randomObject.getString("country");
             String runtime = randomObject.getString("runtime");
-            jsonObject[3] = language +" / " + country + " / " + runtime;
+            jsonObject[3] = language +"\n" + country + "\n" + runtime;
             return jsonObject;
         }
         else {

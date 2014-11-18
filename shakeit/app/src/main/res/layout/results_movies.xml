@@ -29,6 +29,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Movie title:"
         android:id="@+id/textView"
+        android:textSize="16dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -38,6 +39,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMovie"
         android:layout_below="@+id/textView"
+        android:textSize="24dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
 
@@ -47,6 +49,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="IMDB Rank:"
         android:id="@+id/textView2"
+        android:textSize="16dp"
         android:layout_below="@+id/tvMovie"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
@@ -57,6 +60,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMovie2"
         android:layout_below="@+id/textView2"
+        android:textSize="24dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
 
@@ -67,6 +71,7 @@
         android:text="Genre:"
         android:id="@+id/textView3"
         android:layout_below="@+id/tvMovie2"
+        android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
 
@@ -76,6 +81,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMovie3"
         android:layout_below="@+id/textView3"
+        android:textSize="24dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
 
@@ -86,6 +92,7 @@
         android:text="Language / Country / Runtime:"
         android:id="@+id/textView4"
         android:layout_below="@+id/tvMovie3"
+        android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
 
@@ -95,7 +102,18 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvMovie4"
         android:layout_below="@+id/textView4"
+        android:textSize="24dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch later"
+        android:id="@+id/bFavorite"
+        android:layout_alignBottom="@+id/bBack"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
 
 </RelativeLayout>
