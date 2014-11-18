@@ -48,6 +48,9 @@ public class Restaurants extends Activity{
                 randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
                 price = randomObject.getString("price");
                 if(price.contains(radioGenre)) {
+
+
+
                                         correct = true;
                 }
             }
