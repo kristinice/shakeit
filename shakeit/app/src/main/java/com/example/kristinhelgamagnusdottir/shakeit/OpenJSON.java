@@ -21,6 +21,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 /**
@@ -122,8 +123,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_crime:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Crime", 0);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[0] , Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
@@ -131,8 +130,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_drama:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Drama", 1);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[1] , Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
@@ -140,8 +137,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_adventure:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Adventure", 2);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
@@ -149,8 +144,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_family:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Family", 3);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[3] , Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 3);
@@ -158,8 +151,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_scifi:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Sci-Fi", 4);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[4] , Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 4);
@@ -167,8 +158,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_comedy:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Comedy", 5);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[5] , Toast.LENGTH_SHORT).show();
                     }
                     else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 5);
@@ -209,6 +198,34 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                     break;
 
             }
+        }
+    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.price1:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("1");
+                break;
+            case R.id.price2:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("2");
+                break;
+            case R.id.price3:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("3");
+                break;
+            case R.id.price4:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("4");
+                break;
+            case R.id.noFilter:
+                if (checked)
+                    ((GlobalVariable) this.getApplication()).setRadioValue("");
+                break;
         }
     }
 

@@ -81,8 +81,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
-        favorite.setOnClickListener(this);
-
+        if(activityNumb == 1) {
+            favorite.setOnClickListener(this);
+        }
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
             public void onShake()
