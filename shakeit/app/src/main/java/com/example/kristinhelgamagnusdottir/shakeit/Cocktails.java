@@ -84,9 +84,13 @@ public class Cocktails {
         for(int i=0; i<jsonArray.length();i++) {
             randomObject = jsonArray.getJSONObject(i);
             ingredient = randomObject.toString();
-            if(ingredient.contains(checkboxValue[0]) || ingredient.contains(checkboxValue[1]) || ingredient.contains(checkboxValue[2])){
+            if(ingredient.contains(checkboxValue[0]) && ingredient.contains(checkboxValue[1]) && ingredient.contains(checkboxValue[2])){
                 arrayList.add(i);
             }
+        }
+        if(arrayList.size() < 1) {
+            arrayList.add(1);
+            arrayList.add(2);
         }
         return arrayList;
     }
