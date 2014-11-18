@@ -4,8 +4,6 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Created by kristinhelgamagnusdottir on 18/11/14.
  */
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -17,6 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MovieCustomAdapter extends ArrayAdapter<Movie> {
     Context context;
