@@ -38,7 +38,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     String [] checkboxValue;
     String [] jsonObject = new String[3];
 
-    Button aftur,tilbaka,favorite;
+    Button aftur,tilbaka,favorite,share;
     private ShakeListener mShaker;
 
     @Override
@@ -78,9 +78,11 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         aftur = (Button) findViewById(R.id.bAftur);
         tilbaka = (Button) findViewById(R.id.bBack);
         favorite = (Button) findViewById(R.id.bFavorite);
+        share = (Button) findViewById(R.id.bShare);
 
         aftur.setOnClickListener(this);
         tilbaka.setOnClickListener(this);
+        share.setOnClickListener(this);
         if(activityNumb == 1) {
             favorite.setOnClickListener(this);
         }
@@ -188,6 +190,16 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 finish();
                 startActivity(bVR);
+                break;
+            case R.id.bShare:
+                Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                share.putExtra(Intent.EXTRA_SUBJECT, "ShakeIt TakeIt");
+                share.putExtra(Intent.EXTRA_TEXT, "Ég var að prófa ShakeIt TakeIt, það er osom!");
+
+                startActivity(Intent.createChooser(share, "Share link!"));
                 break;
             case R.id.bBack:
                 finish();
