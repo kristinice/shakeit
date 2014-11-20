@@ -13,7 +13,6 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,21 +40,19 @@ public class Cocktails {
     //Notkun: cocktailsList(radioGenre);
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] cocktailList(String [] checkboxValue) throws ClientProtocolException, IOException, JSONException {
+    public String [] cocktailList(String [] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
-        if(data != "") {
+        if(!data.equals("")) {
 
             JSONArray jsonArray = new JSONArray(data);
-            String ingredient = "";
-            JSONObject randomObject;
-            JSONArray jsonArrayIngredients;
 
-            al = selectedValues(ingredient,jsonArray,checkboxValue);
+            JSONObject randomObject;
+
+            al = selectedValues(jsonArray,checkboxValue);
             int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
 
             randomObject = jsonArray.getJSONObject(m);
-
 
             String [] jsonObject = new String[10];
             jsonObject[0] = randomObject.getString("name");
@@ -79,16 +76,21 @@ public class Cocktails {
         return finalString;
     }
 
-    public ArrayList selectedValues(String ingredient, JSONArray jsonArray, String [] checkboxValue)throws JSONException {
+    public ArrayList selectedValues(JSONArray jsonArray, String [] checkboxValue)throws JSONException {
         JSONObject randomObject;
         ArrayList arrayList = new ArrayList();
+        String ingredient = "";
 
         for(int i=0; i<jsonArray.length();i++) {
             randomObject = jsonArray.getJSONObject(i);
             ingredient = randomObject.toString();
-            if(ingredient.contains(checkboxValue[0]) || ingredient.contains(checkboxValue[1]) || ingredient.contains(checkboxValue[2])){
+            if(ingredient.contains(checkboxValue[0]) && ingredient.contains(checkboxValue[1]) && ingredient.contains(checkboxValue[2])){
                 arrayList.add(i);
             }
+        }
+        if(arrayList.size() < 1) {
+            arrayList.add(1);
+            arrayList.add(2);
         }
         return arrayList;
     }
