@@ -117,74 +117,66 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
-        if(activityNumb == 1) {
+        if (activityNumb == 1) {
             // Check which checkbox was clicked
             switch (view.getId()) {
                 case R.id.checkbox_crime:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Crime", 0);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
                     break;
                 case R.id.checkbox_drama:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Drama", 1);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
                     break;
                 case R.id.checkbox_adventure:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Adventure", 2);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
                     break;
                 case R.id.checkbox_family:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Family", 3);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 3);
                     break;
                 case R.id.checkbox_scifi:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Sci-Fi", 4);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 4);
                     break;
                 case R.id.checkbox_comedy:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Comedy", 5);
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 5);
                     break;
 
             }
         }
 
-        if(activityNumb == 2) {
+        if (activityNumb == 2) {
             // Check which checkbox was clicked
             switch (view.getId()) {
                 case R.id.checkbox_vodka:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Vodka", 0);
                         jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[0] , Toast.LENGTH_SHORT).show();
-                    }
-                    else
+                        Toast.makeText(getApplicationContext(), jebb[0], Toast.LENGTH_SHORT).show();
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
                     break;
                 case R.id.checkbox_rum:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Rum", 1);
                         jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(),jebb[1] , Toast.LENGTH_SHORT).show();
-                    }
-                    else
+                        Toast.makeText(getApplicationContext(), jebb[1], Toast.LENGTH_SHORT).show();
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
                     break;
                 case R.id.checkbox_wiskey:
@@ -192,40 +184,44 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Wiskey", 2);
                         jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
                         Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
-                    }
-                    else
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
                     break;
 
             }
         }
-    }
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.price1:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("1");
-                break;
-            case R.id.price2:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("2");
-                break;
-            case R.id.price3:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("3");
-                break;
-            case R.id.price4:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("4");
-                break;
-            case R.id.noFilter:
-                if (checked)
-                    ((GlobalVariable) this.getApplication()).setRadioValue("");
-                break;
+        if (activityNumb == 3) {
+            for(int i=0; i<8; i++) {
+                ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", i);
+            }
+            switch (view.getId()) {
+                case R.id.checkbox_price1:
+                    if (checked)
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("1", 0);
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 0);
+                    break;
+                case R.id.checkbox_price2:
+                    if (checked)
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("2", 1);
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 1);
+                    break;
+                case R.id.checkbox_price3:
+                    if (checked)
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("3", 1);
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 1);
+                    break;
+                case R.id.checkbox_price4:
+                    if (checked)
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("4", 1);
+                    else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 1);
+                    break;
+
+            }
         }
     }
 

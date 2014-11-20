@@ -15,7 +15,7 @@ import android.app.Application;
 public class GlobalVariable extends Application {
     private int activityNumber;
     private String radioValue;
-    private String [] checkboxValues = new String[6];
+    private String [] checkboxValues = new String[20];
 
     //Notkun:getActivityNumber();
     //Eftir: Skilar heiltölunni activityNumber

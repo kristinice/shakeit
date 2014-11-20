@@ -71,6 +71,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             textView = (TextView) findViewById(R.id.tvRestaurants);
             textView2 = (TextView) findViewById(R.id.tvRestaurants2);
             textView3 = (TextView) findViewById(R.id.tvRestaurants3);
+            textView4 = (TextView) findViewById(R.id.tvRestaurants4);
         }
 
         new Read().execute();
@@ -111,7 +112,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                     jsonObject = cocktails.cocktailList(stl);
                 }
                 if(activityNumb == 3) {
-                    jsonObject = restaurants.restaurantList(stl);
+                    jsonObject = restaurants.restaurantList(checkboxValue);
                 }
 
                 if(jsonObject == null) {

@@ -17,13 +17,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Restaurants extends Activity{
 
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/veitingastadir.json";
-
+    ArrayList al = new ArrayList();
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala
     //Eftir: Heiltala x sem er 0 <= x <= n
@@ -35,25 +36,41 @@ public class Restaurants extends Activity{
     //Notkun: restaurantList(radioGenre);
     //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] restaurantList(String radioGenre) throws IOException, JSONException {
+    public String [] restaurantList(String [] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
         if(data != "") {
             JSONArray jsonArray = new JSONArray(data);
-            boolean correct = false;
-
             String price;
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
-            while(!correct){
-                randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
+            String branch;
+            JSONObject randomObject;
+            JSONArray randomArrey;
+            for(int i=0; i<jsonArray.length();i++) {
+                randomObject = jsonArray.getJSONObject(i);
                 price = randomObject.getString("price");
-                if(price.contains(radioGenre)) {
+                branch = randomObject.getString("branch");
 
 
+                if((price.contains(checkboxValue[0])) || (price.contains(checkboxValue[1])) ||
+                    (price.contains(checkboxValue[2])) || (price.contains(checkboxValue[3])))
+                {
+                    al.add(i);
 
-                                        correct = true;
                 }
+
+
+
+
             }
+
+
+
+
+            int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
+
+
+            randomObject = jsonArray.getJSONObject(m);
+
 
             String [] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("name");
@@ -96,7 +113,18 @@ public class Restaurants extends Activity{
             else {
                 jsonObject[1] = randomObject.getString("price");
             }
-            jsonObject[2] = randomObject.getString("number");
+            String Branch = randomObject.getString("branch")
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replace("\"", "")
+                    .replace(",", ", ")
+                    .replace("{", "")
+                    .replace("},", "\n")
+                    .replace("}", "")
+                    .replace(":", ": ")
+                    .replace("null", "");
+            jsonObject[2] = Branch;
+            jsonObject[3] = randomObject.getString("number");
 
             return jsonObject;
         }

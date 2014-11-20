@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Number"
+        android:text="Branch"
         android:id="@+id/textView3"
         android:layout_below="@+id/tvRestaurants2"
         android:layout_centerHorizontal="true" />
@@ -76,4 +76,22 @@
         android:id="@+id/tvRestaurants3"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Number"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/tvRestaurants3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvRestaurants4"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

@@ -25,7 +25,7 @@ public class Movies extends Activity{
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/~sij65/Hugbunadarverkefni%201/movies.json";
     ArrayList al = new ArrayList();
-    ArrayList al2 = new ArrayList();
+
 
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala.
@@ -47,7 +47,7 @@ public class Movies extends Activity{
             JSONArray jsonArray = new JSONArray(data);
             String genres;
 
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
+            JSONObject randomObject;
 
             for(int i=0; i<jsonArray.length();i++) {
                 randomObject = jsonArray.getJSONObject(i);
@@ -64,12 +64,6 @@ public class Movies extends Activity{
 
 
             int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
-            String [] tilraun = new String[4];
-            tilraun[0] = al.get(0).toString();
-            tilraun[1] = Integer.toString(randomNumber(26));
-            tilraun[2] = checkboxValue[2];
-            tilraun[3] = Integer.toString(al.size());
-
 
 
             randomObject = jsonArray.getJSONObject(m);
