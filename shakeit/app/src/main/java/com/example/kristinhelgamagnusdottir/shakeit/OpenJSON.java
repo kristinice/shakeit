@@ -181,7 +181,7 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                     break;
                 case R.id.checkbox_wiskey:
                     if (checked) {
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Wiskey", 2);
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Whiskey", 2);
                         jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
                         Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
                     } else

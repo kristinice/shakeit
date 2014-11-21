@@ -4,12 +4,15 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Created by kristinhelgamagnusdottir on 12/11/14.
  */
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class Favorites {
 
@@ -24,6 +27,11 @@ public class Favorites {
     private DbHelper ourHelper;
     private final Context ourContext;
     private SQLiteDatabase ourDatabase;
+
+    ArrayList<Movie> movieArray = new ArrayList<Movie>();
+
+
+
 
     private static class DbHelper extends SQLiteOpenHelper{
 
@@ -69,7 +77,7 @@ public class Favorites {
         return ourDatabase.insert(DATABASE_TABLE, null, cv);
     }
 
-    public String getData() {
+    public ArrayList getData() {
         // TODO Auto-generated method stub
         String[] columns = new String[]{ KEY_ROWID, KEY_TITLE};
         Cursor c = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
@@ -81,9 +89,11 @@ public class Favorites {
 
         for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
             result = result + c.getString(iRow) + " " + c.getString(iTitle) + "\n";
+
+            movieArray.add(new Movie(c.getString(iTitle)));
         }
 
-        return result;
+        return movieArray;
     }
 
     public String getTitle(long l) throws SQLException{
@@ -104,10 +114,10 @@ public class Favorites {
         cvUpdate.put(KEY_TITLE, mTitle);
         ourDatabase.update(DATABASE_TABLE, cvUpdate, KEY_ROWID + "=" + lRow, null);
     }
-
-    public void deleteEntry(long lRow1) throws SQLException{
+    public void deleteEntry(String lRow1) throws SQLException{
         // TODO Auto-generated method stub
-        ourDatabase.delete(DATABASE_TABLE, KEY_ROWID + "=" + lRow1, null);
+        ourDatabase.delete(DATABASE_TABLE, KEY_TITLE + "=" + "'" + lRow1 + "'", null);
+
     }
 
 }
