@@ -43,35 +43,11 @@ public class Movies extends Activity{
         String data = parseJSON.BuffReader(URL);
 
         if(data != "") {
-
             JSONArray jsonArray = new JSONArray(data);
-            String genres;
-
-            JSONObject randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
-
-            for(int i=0; i<jsonArray.length();i++) {
-                randomObject = jsonArray.getJSONObject(i);
-                genres = randomObject.getString("genres");
-                if((genres.contains(checkboxValue[0])) && (genres.contains(checkboxValue[1]))&&
-                (genres.contains(checkboxValue[2])) && (genres.contains(checkboxValue[3])) &&
-                        (genres.contains(checkboxValue[4]))&&(genres.contains(checkboxValue[5]))){
-                    al.add(i);
-
-                }
-            }
-
-
-
+            JSONObject randomObject;
+            al = selectedValues(jsonArray,checkboxValue);
 
             int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
-            String [] tilraun = new String[4];
-            tilraun[0] = al.get(0).toString();
-            tilraun[1] = Integer.toString(randomNumber(26));
-            tilraun[2] = checkboxValue[2];
-            tilraun[3] = Integer.toString(al.size());
-
-
-
             randomObject = jsonArray.getJSONObject(m);
 
             String [] jsonObject = new String[4];
@@ -88,5 +64,25 @@ public class Movies extends Activity{
             return null;
         }
 
+    }
+
+    public ArrayList selectedValues(JSONArray jsonArray, String [] checkboxValue)throws JSONException {
+        String genres;
+        JSONObject randomObject;
+        ArrayList arrayList = new ArrayList();
+        for(int i=0; i<jsonArray.length();i++) {
+            randomObject = jsonArray.getJSONObject(i);
+            genres = randomObject.getString("genres");
+            if((genres.contains(checkboxValue[0])) && (genres.contains(checkboxValue[1]))&&
+                    (genres.contains(checkboxValue[2])) && (genres.contains(checkboxValue[3])) &&
+                    (genres.contains(checkboxValue[4]))&&(genres.contains(checkboxValue[5]))){
+                arrayList.add(i);
+            }
+        }
+        if(arrayList.size() <= 1) {
+            arrayList.add(1);
+
+        }
+        return arrayList;
     }
 }

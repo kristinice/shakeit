@@ -46,7 +46,6 @@ public class Cocktails {
         if(!data.equals("")) {
 
             JSONArray jsonArray = new JSONArray(data);
-
             JSONObject randomObject;
 
             al = selectedValues(jsonArray,checkboxValue);
@@ -88,9 +87,10 @@ public class Cocktails {
                 arrayList.add(i);
             }
         }
-        if(arrayList.size() < 1) {
+        if(arrayList.size() <= 1) {
             arrayList.add(1);
             arrayList.add(2);
+
         }
         return arrayList;
     }
