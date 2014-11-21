@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
-        android:text="@string/want_random_CT"
+        android:text="@string/want_random_restau"
         android:id="@+id/tvViltuRandomCT"
         android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/moneyMark"
+        android:id="@+id/moneyMark"
+        android:layout_below="@id/tvViltuRandomCT"
+        android:layout_alignParentLeft="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/postcode"
+        android:id="@+id/postcode"
+        android:layout_below="@id/tvViltuRandomCT"
+        android:layout_alignParentRight="true"
         />
 
 
@@ -19,22 +37,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Less than 1300 kr."
-        android:onClick="onCheckboxClicked"/>
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/moneyMark"/>
+
+    <CheckBox android:id="@+id/postcode_101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="101"
+        android:onClick="onCheckboxClicked"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/moneyMark"
+        android:layout_marginRight="15dp"/>
+
     <CheckBox android:id="@+id/checkbox_price2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1300 kr. - 2500 kr."
-        android:onClick="onCheckboxClicked"/>
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/checkbox_price1"/>
+
+    <CheckBox android:id="@+id/postcode_105"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="105"
+        android:onClick="onCheckboxClicked"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/postcode_101"
+        android:layout_marginRight="15dp"/>
+
     <CheckBox android:id="@+id/checkbox_price3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2500 kr. - 4000 kr."
-        android:onClick="onCheckboxClicked"/>
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/checkbox_price2"/>
+
+    <CheckBox android:id="@+id/postcode_110"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="110"
+        android:onClick="onCheckboxClicked"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/postcode_105"
+        android:layout_marginRight="15dp"/>
+
     <CheckBox android:id="@+id/checkbox_price4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="More than 4000 kr."
-        android:onClick="onCheckboxClicked"/>
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/checkbox_price3"/>
+
+    <CheckBox android:id="@+id/postcode_200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200"
+        android:onClick="onCheckboxClicked"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/postcode_110"
+        android:layout_marginRight="15dp"/>
+
+    <CheckBox android:id="@+id/postcode_220"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="220"
+        android:onClick="onCheckboxClicked"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/postcode_200"
+        android:layout_marginRight="15dp"/>
 
 
 
@@ -46,7 +116,8 @@
         android:text="@string/tvPressButton"
         android:id="@+id/tvPressButtonCT"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/checkbox_price4"/>/>
 
     <Button
         android:layout_width="wrap_content"
@@ -54,7 +125,8 @@
         android:text="@string/get_random"
         android:id="@+id/bVilRandom"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvPressButtonCT"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -62,6 +134,7 @@
         android:text="@string/tilbaka"
         android:id="@+id/bTilBaka"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/bVilRandom"/>
 
-</LinearLayout>
+</RelativeLayout>

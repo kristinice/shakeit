@@ -25,6 +25,7 @@ public class Restaurants extends Activity{
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/veitingastadir.json";
     ArrayList al = new ArrayList();
+    ArrayList al2 = new ArrayList();
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala
     //Eftir: Heiltala x sem er 0 <= x <= n
@@ -39,7 +40,7 @@ public class Restaurants extends Activity{
     public String [] restaurantList(String [] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
-        if(data != "") {
+        if(!data.equals("")) {
             JSONArray jsonArray = new JSONArray(data);
             String price;
             String branch;
@@ -48,21 +49,28 @@ public class Restaurants extends Activity{
             for(int i=0; i<jsonArray.length();i++) {
                 randomObject = jsonArray.getJSONObject(i);
                 price = randomObject.getString("price");
-                branch = randomObject.getString("branch");
+                branch = randomObject.toString();
 
-
-                if((price.contains(checkboxValue[0])) || (price.contains(checkboxValue[1])) ||
-                    (price.contains(checkboxValue[2])) || (price.contains(checkboxValue[3])))
+                if((branch.contains(checkboxValue[4])) || (branch.contains(checkboxValue[5])) ||
+                    (branch.contains(checkboxValue[6])) || (branch.contains(checkboxValue[7]))
+                    || (branch.contains(checkboxValue[8])))
                 {
-                    al.add(i);
+                    if(price.contains(checkboxValue[0]) || price.contains(checkboxValue[1]) ||
+                            price.contains(checkboxValue[2]) || price.contains(checkboxValue[3])) {
+                        al.add(i);
+                    }
+
 
                 }
 
 
-
-
             }
 
+
+            if(al.size() <= 1) {
+                al.add(1);
+                al.add(2);
+            }
 
 
 

@@ -16,12 +16,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 /**
@@ -58,6 +58,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         }
         else if (activityNumb == 3) {
             setContentView(R.layout.open_restaurants);
+            for(int i=0; i<10; i++) {
+                ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", i);
+            }
         }
         else {
             setContentView(R.layout.givemetext);
@@ -192,14 +195,14 @@ public class OpenJSON extends Activity implements View.OnClickListener {
         }
 
         if (activityNumb == 3) {
-            for(int i=0; i<8; i++) {
-                ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", i);
-            }
+
             switch (view.getId()) {
                 case R.id.checkbox_price1:
-                    if (checked)
+                    if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("1", 0);
-                    else
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[0]);
+                    } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 0);
                     break;
                 case R.id.checkbox_price2:
@@ -210,15 +213,60 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                     break;
                 case R.id.checkbox_price3:
                     if (checked)
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("3", 1);
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("3", 2);
                     else
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 1);
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 2);
                     break;
                 case R.id.checkbox_price4:
                     if (checked)
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("4", 1);
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("4", 3);
                     else
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 1);
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 3);
+                    break;
+                case R.id.postcode_101:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("101", 4);
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[4]);
+                        Log.i(toString(), "jebb");
+                    } else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 4);
+                    break;
+                case R.id.postcode_105:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("105", 5);
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[5]);
+                        Log.i(toString(), "jebb");
+                    } else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 5);
+                    break;
+                case R.id.postcode_110:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("110", 6);
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[6]);
+                        Log.i(toString(), "jebb");
+                    } else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 6);
+                    break;
+                case R.id.postcode_200:
+                    if (checked) {
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("200", 7);
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[7]);
+                        Log.i(toString(), "jebb");
+                    }else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 7);
+                    break;
+                case R.id.postcode_220:
+                    if (checked) {
+                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
+                        Log.i(toString(), jebb[8]);
+                        Log.i(toString(), "jebb");
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("220", 8);
+                    }else
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 8);
                     break;
 
             }
