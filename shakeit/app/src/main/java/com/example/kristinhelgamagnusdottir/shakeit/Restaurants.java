@@ -2,7 +2,7 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 
 /**
  * Höfundur: Sindri Snær Rúnarsson
- * Útgáfa: 1.0
+ * Útgáfa: 1.2
  * Dagsetning: 28. október 2014
  *
  * Þessi klasi ákveður hvað eigi að taka úr restaurant JSON skránni sem fæst af netinu og birta.

@@ -5,8 +5,8 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Útgáfa: 1.2
  * Dagsetning: 18. nóvember 2014
  *
- *
- *
+ * SQLView sendir gögn til birtingar í layout, til að sýna hvaða myndir hafa verið vistaðar af
+ * notanda. Hann notast síðan við MovieCustomAdapter til að birta hverja einingu listans.
  *
  */
 
@@ -44,8 +44,6 @@ public class SQLView extends Activity {
         movieList = (ListView) findViewById(R.id.listView);
         movieList.setItemsCanFocus(false);
         movieList.setAdapter(movieAdapter);
-        //movieList.invalidate();
-        //movieAdapter.notifyDataSetChanged();
 
     }
 
