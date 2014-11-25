@@ -92,7 +92,7 @@ public class Restaurants extends Activity {
     //Fyrir: stringToTrim er strengur sem á eftir að laga útlit á
     //Eftir: Skilað er streng sem búið er að laga útlit á.
     public String stringTrim(String stringToTrim) {
-        String finalString = stringToTrim
+        stringToTrim
                 .replace("[", "")
                 .replace("]", "")
                 .replace("\"", "")
@@ -102,7 +102,7 @@ public class Restaurants extends Activity {
                 .replace("}", "")
                 .replace(":", ": ")
                 .replace("null", "");
-        return finalString;
+        return stringToTrim;
     }
 
     //Notkun: printJSONObject1(Price)
