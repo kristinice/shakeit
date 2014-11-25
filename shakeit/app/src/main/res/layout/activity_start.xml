@@ -58,16 +58,16 @@
             android:paddingRight="4dp"/>
 
         <ImageView
-            android:id="@+id/imageChuck"
+            android:id="@+id/imageJokes"
             android:layout_width="385dp"
             android:layout_height="150dp"
             android:src="@drawable/funny" />
 
         <TextView
-            android:id="@+id/textViewChuck"
+            android:id="@+id/textViewJokes"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@+string/chuck"
+            android:text="@+string/jokes"
             android:paddingLeft="4dp"
             android:paddingRight="4dp" />
 

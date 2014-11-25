@@ -22,6 +22,7 @@ public class StartActivity extends Activity implements View.OnClickListener{
     ImageView imageMovies;
     ImageView imageCocktail;
     ImageView imageRestaurants;
+    ImageView imageJokes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class StartActivity extends Activity implements View.OnClickListener{
 
         imageRestaurants = (ImageView) findViewById(R.id.imageRestaurants);
         imageRestaurants.setOnClickListener(this);
+
+        imageJokes = (ImageView) findViewById(R.id.imageJokes);
+        imageJokes.setOnClickListener(this);
 
 
 
@@ -69,6 +73,11 @@ public class StartActivity extends Activity implements View.OnClickListener{
         Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
         startActivity(ourIntent);
     }
+    private void onClickJokes() {
+        ((GlobalVariable) this.getApplication()).setActivityNumber(4);
+        Intent ourIntent = new Intent(StartActivity.this, OpenJSON.class);
+        startActivity(ourIntent);
+    }
 
     @Override
     public void onClick(View v) {
@@ -83,6 +92,9 @@ public class StartActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.imageRestaurants:
                 onClickRestaurants();
+                break;
+            case R.id.imageJokes:
+                onClickJokes();
                 break;
         }
     }

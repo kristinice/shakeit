@@ -62,6 +62,9 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", i);
             }
         }
+        else if (activityNumb == 4){
+            setContentView(R.layout.open_jokes);
+        }
         else {
             setContentView(R.layout.givemetext);
         }

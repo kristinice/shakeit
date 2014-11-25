@@ -31,6 +31,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Movies movies = new Movies();
     Cocktails cocktails = new Cocktails();
     Restaurants restaurants = new Restaurants();
+    Jokes jokes = new Jokes();
 
     TextView textView, textView2, textView3, textView4;
     int activityNumb;
@@ -72,6 +73,10 @@ public class ShowJSON extends Activity implements View.OnClickListener{
             textView2 = (TextView) findViewById(R.id.tvRestaurants2);
             textView3 = (TextView) findViewById(R.id.tvRestaurants3);
             textView4 = (TextView) findViewById(R.id.tvRestaurants4);
+        }
+        if(activityNumb == 4) {
+            setContentView(R.layout.results_jokes);
+            textView = (TextView) findViewById(R.id.tvJokes);
         }
 
         new Read().execute();
@@ -117,6 +122,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 if(activityNumb == 3) {
                     jsonObject = restaurants.restaurantList(checkboxValue);
                 }
+                if (activityNumb == 4){
+                    jsonObject = jokes.jokesList();
+                }
 
                 if(jsonObject == null) {
                     textView.setText("Database not connected");
@@ -137,7 +145,9 @@ public class ShowJSON extends Activity implements View.OnClickListener{
         protected void onPostExecute(String [] results) {
             try {
                 textView.setText(results[0]);
-                textView2.setText(results[1]);
+                if (results[1] != null) {
+                    textView2.setText(results[1]);
+                }
                 if (results[2] != null) {
                     textView3.setText(results[2]);
                 }
