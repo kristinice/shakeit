@@ -2,6 +2,7 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 
 /**
  * Created by Emil on 2.11.2014.
+ * Þessi Klasi sér um að keyra activity_splash í ákveðinn tíma áður en það skiptir yfir á activity_main.
  */
 
 import android.app.Activity;
