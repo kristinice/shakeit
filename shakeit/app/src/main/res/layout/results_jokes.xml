@@ -41,5 +41,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:id="@+id/bShare"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/bAftur"
+        android:layout_alignStart="@+id/bAftur"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="68dp" />
+
 
 </RelativeLayout>
