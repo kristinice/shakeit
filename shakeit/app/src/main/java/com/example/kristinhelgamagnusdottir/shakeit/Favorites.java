@@ -1,7 +1,13 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
 /**
- * Created by kristinhelgamagnusdottir on 12/11/14.
+ * Höfundur: Kristín Helga Magnúsdóttir
+ * Útgáfa: 1.2
+ * Dagsetning: 18. nóvember 2014
+ *
+ * Klasinn Favorites
+ *
+ *
  */
 
 
@@ -29,8 +35,6 @@ public class Favorites {
     private SQLiteDatabase ourDatabase;
 
     ArrayList<Movie> movieArray = new ArrayList<Movie>();
-
-
 
 
     private static class DbHelper extends SQLiteOpenHelper{
@@ -96,24 +100,6 @@ public class Favorites {
         return movieArray;
     }
 
-    public String getTitle(long l) throws SQLException{
-        // TODO Auto-generated method stub
-        String[] columns = new String[]{ KEY_ROWID, KEY_TITLE};
-        Cursor c = ourDatabase.query(DATABASE_TABLE, columns, KEY_ROWID + "=" + l, null, null, null, null);
-        if (c != null){
-            c.moveToFirst();
-            String title = c.getString(1);
-            return title;
-        }
-        return null;
-    }
-
-    public void updateEntry(long lRow, String mTitle) throws SQLException{
-        // TODO Auto-generated method stub
-        ContentValues cvUpdate = new ContentValues();
-        cvUpdate.put(KEY_TITLE, mTitle);
-        ourDatabase.update(DATABASE_TABLE, cvUpdate, KEY_ROWID + "=" + lRow, null);
-    }
     public void deleteEntry(String lRow1) throws SQLException{
         // TODO Auto-generated method stub
         ourDatabase.delete(DATABASE_TABLE, KEY_TITLE + "=" + "'" + lRow1 + "'", null);

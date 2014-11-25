@@ -12,9 +12,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * sig aftur ef ýtt er á “Give me another suggestion”.
  */
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -42,6 +44,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Button aftur,tilbaka,favorite,share;
     private ShakeListener mShaker;
 
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +112,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
     }
 
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
     public class Read extends AsyncTask<String [], Integer, String []> {
         @Override
         protected String [] doInBackground(String []... params) {
@@ -196,9 +200,6 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 }
                 break;
             case R.id.bAftur:
-                //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
-                //finish();
-                //startActi vity(bVR);
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 finish();
                 startActivity(bVR);
@@ -209,7 +210,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
                 share.putExtra(Intent.EXTRA_SUBJECT, "ShakeIt TakeIt");
-                share.putExtra(Intent.EXTRA_TEXT, "Ég var að prófa ShakeIt TakeIt, það er osom!");
+                share.putExtra(Intent.EXTRA_TEXT, "Ég var að prófa ShakeIt TakeIt, það er snilld!");
 
                 startActivity(Intent.createChooser(share, "Share link!"));
                 break;

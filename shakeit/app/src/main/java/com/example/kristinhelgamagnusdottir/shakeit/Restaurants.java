@@ -39,13 +39,11 @@ public class Restaurants extends Activity{
     //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
     public String [] restaurantList(String [] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
-
         if(!data.equals("")) {
             JSONArray jsonArray = new JSONArray(data);
             String price;
             String branch;
             JSONObject randomObject;
-            JSONArray randomArrey;
             for(int i=0; i<jsonArray.length();i++) {
                 randomObject = jsonArray.getJSONObject(i);
                 price = randomObject.getString("price");
@@ -59,79 +57,20 @@ public class Restaurants extends Activity{
                             price.contains(checkboxValue[2]) || price.contains(checkboxValue[3])) {
                         al.add(i);
                     }
-
-
                 }
-
-
             }
-
-
             if(al.size() <= 1) {
                 al.add(1);
                 al.add(2);
             }
-
-
-
             int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
-
-
             randomObject = jsonArray.getJSONObject(m);
 
 
             String [] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("name");
-            String Price = randomObject.getString("price")
-                    .replace("[", "")
-                    .replace("]", "")
-                    .replace("\"", "")
-                    .replace(",", ", ")
-                    .replace("null", "");
-            if (Price.contains("1, 2, 3, 4")){
-               jsonObject[1] = Price.replace("1, 2, 3, 4", "Less than 1300 kr. - More than 4000 kr.");
-            }
-            else if (Price.contains("1, 2, 3")){
-                jsonObject[1] = Price.replace("1, 2, 3", "Less than 1300 kr. - 4000 kr.");
-            }
-            else if (Price.contains("2, 3, 4")){
-                jsonObject[1] = Price.replace("2, 3, 4", "1300 kr. - More than 4000 kr.");
-            }
-            else if (Price.contains("1, 2")){
-                jsonObject[1] = Price.replace("1, 2", "Less than 1300 kr. - 2500 kr.");
-            }
-            else if (Price.contains("2, 3")){
-                jsonObject[1] = Price.replace("2, 3", "1300 kr. - 4000 kr.");
-            }
-            else if (Price.contains("3, 4")){
-                jsonObject[1] = Price.replace("3, 4", "2500 kr. - More than 4000 kr.");
-            }
-            else if (Price.contains("1")){
-                jsonObject[1] = Price.replace("1", "Less than 1300 kr.");
-            }
-            else if (Price.contains("2")){
-                jsonObject[1] = Price.replace("2", "1300 kr. - 2500 kr.");
-            }
-            else if (Price.contains("3")){
-                jsonObject[1] = Price.replace("3", "2500 kr. - 4000 kr.");
-            }
-            else if (Price.contains("4")){
-                jsonObject[1] = Price.replace("4", "More than 4000 kr.");
-            }
-            else {
-                jsonObject[1] = randomObject.getString("price");
-            }
-            String Branch = randomObject.getString("branch")
-                    .replace("[", "")
-                    .replace("]", "")
-                    .replace("\"", "")
-                    .replace(",", ", ")
-                    .replace("{", "")
-                    .replace("},", "\n")
-                    .replace("}", "")
-                    .replace(":", ": ")
-                    .replace("null", "");
-            jsonObject[2] = Branch;
+            jsonObject[1] = printJSONObject1(stringTrim(randomObject.getString("price")));
+            jsonObject[2] = stringTrim(randomObject.getString("branch"));
             jsonObject[3] = randomObject.getString("number");
 
             return jsonObject;
@@ -140,5 +79,53 @@ public class Restaurants extends Activity{
             return null;
         }
 
+    }
+
+    public String stringTrim(String stringToTrim) {
+        String finalString = stringToTrim
+                .replace("[", "")
+                .replace("]", "")
+                .replace("\"", "")
+                .replace(",", ", ")
+                .replace("{", "")
+                .replace("},", "\n")
+                .replace("}", "")
+                .replace(":", ": ")
+                .replace("null", "");
+        return finalString;
+    }
+
+    public String printJSONObject1(String Price) {
+        if (Price.contains("1, 2, 3, 4")){
+            return Price.replace("1, 2, 3, 4", "Less than 1300 kr. - More than 4000 kr.");
+        }
+        else if (Price.contains("1, 2, 3")){
+            return Price.replace("1, 2, 3", "Less than 1300 kr. - 4000 kr.");
+        }
+        else if (Price.contains("2, 3, 4")){
+            return Price.replace("2, 3, 4", "1300 kr. - More than 4000 kr.");
+        }
+        else if (Price.contains("1, 2")){
+            return Price.replace("1, 2", "Less than 1300 kr. - 2500 kr.");
+        }
+        else if (Price.contains("2, 3")){
+            return Price.replace("2, 3", "1300 kr. - 4000 kr.");
+        }
+        else if (Price.contains("3, 4")){
+            return Price.replace("3, 4", "2500 kr. - More than 4000 kr.");
+        }
+        else if (Price.contains("1")){
+            return Price.replace("1", "Less than 1300 kr.");
+        }
+        else if (Price.contains("2")){
+            return Price.replace("2", "1300 kr. - 2500 kr.");
+        }
+        else if (Price.contains("3")){
+            return Price.replace("3", "2500 kr. - 4000 kr.");
+        }
+        else if (Price.contains("4")){
+            return Price.replace("4", "More than 4000 kr.");
+        }
+        return "Óvíst verð";
     }
 }

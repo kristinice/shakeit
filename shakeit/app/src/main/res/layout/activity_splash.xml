@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:src="@drawable/front"
          />
 
     <TextView
@@ -16,7 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:textSize="12dp"
-        android:textColor="#454545"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="Hugbúnaðarverkefni 1 - Háskóli Íslands" />
