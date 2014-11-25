@@ -186,9 +186,6 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 }
                 break;
             case R.id.bAftur:
-                //Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
-                //finish();
-                //startActi vity(bVR);
                 Intent bVR = new Intent("com.example.kristinhelgamagnusdottir.shakeit.ShowJSON");
                 finish();
                 startActivity(bVR);
@@ -199,7 +196,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
                 share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
                 share.putExtra(Intent.EXTRA_SUBJECT, "ShakeIt TakeIt");
-                share.putExtra(Intent.EXTRA_TEXT, "Ég var að prófa ShakeIt TakeIt, það er osom!");
+                share.putExtra(Intent.EXTRA_TEXT, "Ég var að prófa ShakeIt TakeIt, það er snilld!");
 
                 startActivity(Intent.createChooser(share, "Share link!"));
                 break;

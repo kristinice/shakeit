@@ -1,7 +1,13 @@
 package com.example.kristinhelgamagnusdottir.shakeit;
 
 /**
- * Created by kristinhelgamagnusdottir on 18/11/14.
+ * Höfundur: Kristín Helga Magnúsdóttir
+ * Útgáfa: 1.2
+ * Dagsetning: 18. nóvember 2014
+ *
+ *
+ *
+ *
  */
 
 import android.app.Activity;
