@@ -24,8 +24,6 @@ public class Jokes extends Activity{
 
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/jokes.json";
-    ArrayList al = new ArrayList();
-    ArrayList al2 = new ArrayList();
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala
     //Eftir: Heiltala x sem er 0 <= x <= n
@@ -34,23 +32,18 @@ public class Jokes extends Activity{
         return randGen.nextInt(n);
     }
 
-    //Notkun: restaurantList(radioGenre);
-    //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
-    //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
+    //Notkun: JokesList();
+    //Eftir: Búið er að finna gildi úr JSON skrá og skila strengjum.
     public String [] jokesList() throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
         if(!data.equals("")) {
             JSONArray jsonArray = new JSONArray(data);
-
             JSONObject randomObject;
-
             randomObject = jsonArray.getJSONObject(randomNumber(jsonArray.length()));
-
             String [] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("joke")
                     .replace("%%", "\n");
-
             return jsonObject;
         }
         else {
