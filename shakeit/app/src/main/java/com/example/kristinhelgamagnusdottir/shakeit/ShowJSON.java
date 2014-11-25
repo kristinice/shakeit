@@ -12,9 +12,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * sig aftur ef ýtt er á “Give me another suggestion”.
  */
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -41,6 +43,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
     Button aftur,tilbaka,favorite,share;
     private ShakeListener mShaker;
 
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +107,7 @@ public class ShowJSON extends Activity implements View.OnClickListener{
 
     }
 
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
     public class Read extends AsyncTask<String [], Integer, String []> {
         @Override
         protected String [] doInBackground(String []... params) {
