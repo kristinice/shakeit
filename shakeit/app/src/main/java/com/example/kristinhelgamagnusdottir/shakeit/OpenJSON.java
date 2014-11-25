@@ -12,29 +12,19 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  */
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Vibrator;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Toast;
-
-/**
- * Created by kristinhelgamagnusdottir on 13/10/14.
- */
 
 public class OpenJSON extends Activity implements View.OnClickListener {
 
     Button GiveRandom, FaraTilBaka, sqlView;
     private ShakeListener mShaker;
-    GlobalVariable globalVariable = new GlobalVariable();
     int activityNumb;
-    String [] jebb = new String[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,21 +71,13 @@ public class OpenJSON extends Activity implements View.OnClickListener {
             sqlView = (Button) findViewById(R.id.bSQLopenView);
             sqlView.setOnClickListener(this);
         }
-        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
             public void onShake()
             {
-
                 Intent bVR = new Intent(OpenJSON.this, ShowJSON.class);
-                finish();
                 startActivity(bVR);
-
-
-
-
-
             }
         });
 
@@ -172,24 +154,18 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_vodka:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Vodka", 0);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(), jebb[0], Toast.LENGTH_SHORT).show();
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 0);
                     break;
                 case R.id.checkbox_rum:
                     if (checked) {
-                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Rum", 1);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(), jebb[1], Toast.LENGTH_SHORT).show();
+                        ((GlobalVariable) this.getApplication()).setCheckboxValues("Rum", 1);;
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 1);
                     break;
                 case R.id.checkbox_wiskey:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Whiskey", 2);
-                        jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Toast.makeText(getApplicationContext(), jebb[2], Toast.LENGTH_SHORT).show();
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("", 2);
                     break;
@@ -203,8 +179,6 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.checkbox_price1:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("1", 0);
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[0]);
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 0);
                     break;
@@ -229,44 +203,29 @@ public class OpenJSON extends Activity implements View.OnClickListener {
                 case R.id.postcode_101:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("101", 4);
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[4]);
-                        Log.i(toString(), "jebb");
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 4);
                     break;
                 case R.id.postcode_105:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("105", 5);
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[5]);
-                        Log.i(toString(), "jebb");
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 5);
                     break;
                 case R.id.postcode_110:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("110", 6);
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[6]);
-                        Log.i(toString(), "jebb");
                     } else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 6);
                     break;
                 case R.id.postcode_200:
                     if (checked) {
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("200", 7);
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[7]);
-                        Log.i(toString(), "jebb");
                     }else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 7);
                     break;
                 case R.id.postcode_220:
                     if (checked) {
-                        String[] jebb = ((GlobalVariable) this.getApplication()).getCheckboxValues();
-                        Log.i(toString(), jebb[8]);
-                        Log.i(toString(), "jebb");
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("220", 8);
                     }else
                         ((GlobalVariable) this.getApplication()).setCheckboxValues("Ekki notað", 8);
