@@ -35,13 +35,11 @@ public class Movies extends Activity{
         return randGen.nextInt(n);
     }
 
-    //Notkun: movieList(radioGenre);
-    //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
-    //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
+    //Notkun: movieList(checkboxValue);
+    //Fyrir: checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að taka hluti úr JSON og strengja þá til prentunar
     public String [] movieList(String [] checkboxValue) throws IOException, JSONException {
-
         String data = parseJSON.BuffReader(URL);
-
         if(data != "") {
             JSONArray jsonArray = new JSONArray(data);
             JSONObject randomObject;
@@ -63,9 +61,12 @@ public class Movies extends Activity{
         else {
             return null;
         }
-
     }
 
+    //Notkun: ArrayList(jsonArray, checkboxValue);
+    //Fyrir: jsonArray er innhald jsonSkránnar og
+    //      checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að sía út val notenda út jsonArray í arrayList.
     public ArrayList selectedValues(JSONArray jsonArray, String [] checkboxValue)throws JSONException {
         String genres;
         JSONObject randomObject;
@@ -81,7 +82,6 @@ public class Movies extends Activity{
         }
         if(arrayList.size() <= 1) {
             arrayList.add(1);
-
         }
         return arrayList;
     }

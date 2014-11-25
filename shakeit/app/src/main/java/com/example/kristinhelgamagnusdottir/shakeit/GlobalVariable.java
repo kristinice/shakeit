@@ -43,15 +43,15 @@ public class GlobalVariable extends Application {
         this.radioValue = radioValue;
     }
 
-    //Notkun: setRadioValue(radioValue);
-    //Fyrir: radioValue er strengur.
-    //Eftir: Breytt hefur verið gildinu á radioValue.
+    //Notkun: setCheckboxValues(checkboxValue, arrayNumber);
+    //Fyrir: checkboxValue er strengur, arrayNumber er heiltala
+    //Eftir: Breytt hefur verið gildunum á checkboxValues.
     public void setCheckboxValues(String checkboxValue, int arrayNumber){
         this.checkboxValues[arrayNumber] = checkboxValue;
     }
 
-    //Notkun:getRadioValue();
-    //Eftir: Skilar strengnum radioValue
+    //Notkun:getCheckboxValues();
+    //Eftir: Skilar strengnum checkboxValues.
     public String [] getCheckboxValues() {
         return checkboxValues;
     }

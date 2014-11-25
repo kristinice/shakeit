@@ -49,12 +49,7 @@ public class StartActivity extends Activity implements View.OnClickListener{
         imageJokes = (ImageView) findViewById(R.id.imageJokes);
         imageJokes.setOnClickListener(this);
 
-
-
-
     }
-    //int activityNumb = ((GlobalVariable) this.getApplication()).getActivityNumber();
-
 
     private void onClickMovies() {
         ((GlobalVariable) this.getApplication()).setActivityNumber(1);
