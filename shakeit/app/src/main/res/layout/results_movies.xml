@@ -126,7 +126,6 @@
         android:id="@+id/bShare"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/bAftur"
-        android:layout_alignStart="@+id/bAftur"
         android:layout_marginLeft="160dp"
         android:layout_marginBottom="30dp"/>
 
