@@ -116,7 +116,7 @@
         android:text="@string/tvPressButton"
         android:id="@+id/tvPressButtonCT"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="150dp"
         android:layout_below="@+id/checkbox_price4"/>/>
 
     <Button
@@ -125,7 +125,7 @@
         android:text="@string/get_random"
         android:id="@+id/bVilRandom"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:layout_below="@+id/tvPressButtonCT"/>
 
     <Button
@@ -134,7 +134,7 @@
         android:text="@string/tilbaka"
         android:id="@+id/bTilBaka"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:layout_below="@+id/bVilRandom"/>
 
 </RelativeLayout>

@@ -9,9 +9,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/want_random"
+        android:gravity="center"
+        android:textSize="30dp"
         android:id="@+id/tvViltuRandom"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="10dp"/>
 
     <CheckBox android:id="@+id/checkbox_crime"
         android:layout_width="wrap_content"

@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="want_random">Shake me to get a suggestion!</string>
     <string name="want_random_CT">Shake me to get a suggestion of an excellent cocktail!</string>
+    <string name="want_random_JK">Shake me to get a suggestion of an excellent joke!</string>
     <string name="want_random_restau">Shake me to get a suggestion of a restaurant!</string>
     <string name="get_random">Give me a suggestion</string>
     <string name="get_random_again">Give me another suggestion</string>
