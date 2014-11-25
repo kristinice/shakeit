@@ -5,7 +5,7 @@ package com.example.kristinhelgamagnusdottir.shakeit;
  * Útgáfa: 1.0
  * Dagsetning: 28. október 2014
  *
- * Þessi klasi ákveður hvað eigi að taka úr JSON skránni sem fæst af netinu og birta.
+ * Þessi klasi ákveður hvað eigi að taka úr restaurant JSON skránni sem fæst af netinu og birta.
  * Klasinn notar sér opnun frá ParseJSON til þess að geta unnið með upplýsingarnar.
  *
  */

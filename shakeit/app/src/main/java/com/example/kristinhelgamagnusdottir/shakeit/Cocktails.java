@@ -2,12 +2,11 @@ package com.example.kristinhelgamagnusdottir.shakeit;
 
 /**
  * Höfundur: Sigurbjörn Jónsson
- * Útgáfa: 1.0
+ * Útgáfa: 1.1
  * Dagsetning: 16. október 2014
  *
- * Þessir klasar eru hönnuðir fyrir því hvað skal gera við hverja JSON skrá sem fæst af netinu.
- * ShowJSON notar klasana eftir að GlobalVariable hefur sagt hvaða klasi eigi að keyrast ef að
- * notandi hefur valið flokk. Cocktails nær í JSON af heimasvæði HÍ.
+ * Þessi klasi ákveður hvað eigi að taka úr cocktail JSON skránni sem fæst af netinu og birta.
+ * Klasinn notar sér opnun frá ParseJSON til þess að geta unnið með upplýsingarnar.
  */
 
 import android.annotation.TargetApi;
@@ -37,9 +36,9 @@ public class Cocktails {
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
-    //Notkun: cocktailsList(radioGenre);
-    //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
-    //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
+    //Notkun: cocktailList(checkboxValue);
+    //Fyrir: checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að taka hluti úr JSON og strengja þá til prentunar
     public String [] cocktailList(String [] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
 
@@ -65,6 +64,9 @@ public class Cocktails {
         }
     }
 
+    //Notkun: stringTrim(stringToTrim)
+    //Fyrir: stringToTrim er strengur sem á eftir að laga útlit á
+    //Eftir: Skilað er streng sem búið er að laga útlit á.
     public String stringTrim(String [] afengi) {
         String finalString = Arrays.toString(afengi)
                 .replace(",", "")
@@ -75,6 +77,10 @@ public class Cocktails {
         return finalString;
     }
 
+    //Notkun: ArrayList(jsonArray, checkboxValue);
+    //Fyrir: jsonArray er innhald jsonSkránnar og
+    //      checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að sía út val notenda út jsonArray í arrayList.
     public ArrayList selectedValues(JSONArray jsonArray, String [] checkboxValue)throws JSONException {
         JSONObject randomObject;
         ArrayList arrayList = new ArrayList();
@@ -94,7 +100,9 @@ public class Cocktails {
         }
         return arrayList;
     }
-
+    //Notkun: getIngrediens(randomObject);
+    //Fyrir: randomObject er object út json skrá
+    //Eftir: Skilar streng innra innhaldi randomObjects
     public String getIngredients(JSONObject randomObject) throws JSONException {
         JSONArray jsonArrayIngredients = randomObject.getJSONArray("ingredients");
         String [] afengi = new String[10];
@@ -109,7 +117,6 @@ public class Cocktails {
             }
 
         }
-
         finalString = stringTrim(afengi);
         return finalString;
 
