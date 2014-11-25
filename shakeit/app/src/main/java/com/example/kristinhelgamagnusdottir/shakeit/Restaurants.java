@@ -20,12 +20,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Restaurants extends Activity{
+public class Restaurants extends Activity {
 
     ParseJSON parseJSON = new ParseJSON();
     final static String URL = "https://notendur.hi.is/ssr9/hugbunadarverkefni/veitingastadir.json";
     ArrayList al = new ArrayList();
-    ArrayList al2 = new ArrayList();
+
     //Notkun:randomNumber(n);
     //Fyrir: n er heiltala
     //Eftir: Heiltala x sem er 0 <= x <= n
@@ -34,53 +34,63 @@ public class Restaurants extends Activity{
         return randGen.nextInt(n);
     }
 
-    //Notkun: restaurantList(radioGenre);
-    //Fyrir: radioGenre er strengur sem inniheldur genre sem notandi valdi
-    //Eftir: Búið er að finna gildi úr JSON skrá sem uppfylti strenginn radioGenre
-    public String [] restaurantList(String [] checkboxValue) throws IOException, JSONException {
+    //Notkun: restaurantList(checkboxValue);
+    //Fyrir: checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að taka hluti úr JSON og strengja þá til prentunar
+    public String[] restaurantList(String[] checkboxValue) throws IOException, JSONException {
         String data = parseJSON.BuffReader(URL);
-        if(!data.equals("")) {
+        if (!data.equals("")) {
             JSONArray jsonArray = new JSONArray(data);
-            String price;
-            String branch;
             JSONObject randomObject;
-            for(int i=0; i<jsonArray.length();i++) {
-                randomObject = jsonArray.getJSONObject(i);
-                price = randomObject.getString("price");
-                branch = randomObject.toString();
-
-                if((branch.contains(checkboxValue[4])) || (branch.contains(checkboxValue[5])) ||
-                    (branch.contains(checkboxValue[6])) || (branch.contains(checkboxValue[7]))
-                    || (branch.contains(checkboxValue[8])))
-                {
-                    if(price.contains(checkboxValue[0]) || price.contains(checkboxValue[1]) ||
-                            price.contains(checkboxValue[2]) || price.contains(checkboxValue[3])) {
-                        al.add(i);
-                    }
-                }
-            }
-            if(al.size() <= 1) {
-                al.add(1);
-                al.add(2);
-            }
-            int m = Integer.parseInt(al.get(randomNumber(al.size()-1)).toString());
+            al = selectedValues(jsonArray,checkboxValue);
+            int m = Integer.parseInt(al.get(randomNumber(al.size() - 1)).toString());
             randomObject = jsonArray.getJSONObject(m);
 
 
-            String [] jsonObject = new String[4];
+            String[] jsonObject = new String[4];
             jsonObject[0] = randomObject.getString("name");
             jsonObject[1] = printJSONObject1(stringTrim(randomObject.getString("price")));
             jsonObject[2] = stringTrim(randomObject.getString("branch"));
             jsonObject[3] = randomObject.getString("number");
 
             return jsonObject;
-        }
-        else {
+        } else {
             return null;
         }
 
     }
 
+    //Notkun: ArrayList(jsonArray, checkboxValue);
+    //Fyrir: jsonArray er innhald jsonSkránnar og
+    //      checkboxValue er fylki strengja sem inniheldur síur sem notandi valdi
+    //Eftir: Búið er að sía út val notenda út jsonArray í arrayList.
+    public ArrayList selectedValues(JSONArray jsonArray, String[] checkboxValue) throws JSONException {
+        String price;
+        String branch;
+        JSONObject randomObject;
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            randomObject = jsonArray.getJSONObject(i);
+            price = randomObject.getString("price");
+            branch = randomObject.toString();
+            if ((branch.contains(checkboxValue[4])) || (branch.contains(checkboxValue[5])) ||
+                    (branch.contains(checkboxValue[6])) || (branch.contains(checkboxValue[7]))
+                    || (branch.contains(checkboxValue[8]))) {
+                if (price.contains(checkboxValue[0]) || price.contains(checkboxValue[1]) ||
+                        price.contains(checkboxValue[2]) || price.contains(checkboxValue[3])) {
+                    arrayList.add(i);
+                }
+            }
+        }
+        if(arrayList.size()<=1){
+            arrayList.add(1);
+            arrayList.add(2);
+        }
+        return arrayList;
+    }
+    //Notkun: stringTrim(stringToTrim)
+    //Fyrir: stringToTrim er strengur sem á eftir að laga útlit á
+    //Eftir: Skilað er streng sem búið er að laga útlit á.
     public String stringTrim(String stringToTrim) {
         String finalString = stringToTrim
                 .replace("[", "")
@@ -95,6 +105,9 @@ public class Restaurants extends Activity{
         return finalString;
     }
 
+    //Notkun: printJSONObject1(Price)
+    //Fyrir: Price er strengur sem inniheldur verðupplýsingar.
+    //Eftir: Skilað er streng sem búið er að laga útlit á.
     public String printJSONObject1(String Price) {
         if (Price.contains("1, 2, 3, 4")){
             return Price.replace("1, 2, 3, 4", "Less than 1300 kr. - More than 4000 kr.");
