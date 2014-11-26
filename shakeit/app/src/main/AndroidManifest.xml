@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kristinhelgamagnusdottir.shakeit" >
+    package="com.ShakeItTakeIt" >
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
     <application
-        android:name=".GlobalVariable"
+        android:label="Shake It Take It"
+        android:name="com.ShakeItTakeIt.GlobalVariable"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        <activity android:name=".StartActivity" android:label="@string/app_name" >
+        <activity android:name="com.ShakeItTakeIt.StartActivity" android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.example.kristinhelgamagnusdottir.shakeit.StartActivity" />
+                <action android:name="com.ShakeItTakeIt.StartActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="com.example.kristinhelgamagnusdottir.shakeit.SplashScreen"
+            android:name="com.ShakeItTakeIt.SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
@@ -28,26 +29,26 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OpenJSON" android:label="@string/app_name"
+        <activity android:name="com.ShakeItTakeIt.OpenJSON" android:label="@string/app_name"
             android:theme="@android:style/Theme.Black">
             <intent-filter>
-                <action android:name="com.example.kristinhelgamagnusdottir.shakeit.OpenJSON" />
+                <action android:name="com.ShakeItTakeIt.OpenJSON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ShowJSON" android:label="@string/app_name"
+        <activity android:name="com.ShakeItTakeIt.ShowJSON" android:label="@string/app_name"
             android:theme="@android:style/Theme.Black">
             <intent-filter>
-                <action android:name="com.example.kristinhelgamagnusdottir.shakeit.ShowJSON" />
+                <action android:name="com.ShakeItTakeIt.ShowJSON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".SQLView" android:label="@string/app_name"
+        <activity android:name="com.ShakeItTakeIt.SQLView" android:label="@string/app_name"
             android:theme="@android:style/Theme.Black">
             <intent-filter>
-                <action android:name="com.example.kristinhelgamagnusdottir.shakeit.SQLView" />
+                <action android:name="com.ShakeItTakeIt.SQLView" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
