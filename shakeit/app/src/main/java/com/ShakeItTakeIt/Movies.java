@@ -82,6 +82,7 @@ public class Movies extends Activity{
         }
         if(arrayList.size() <= 1) {
             arrayList.add(1);
+            arrayList.add(2);
         }
         return arrayList;
     }
